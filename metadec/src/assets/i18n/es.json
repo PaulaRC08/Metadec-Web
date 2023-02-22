@@ -5,5 +5,22 @@
         "USER":"Usuario",
         "PASS":"Contraseña",
         "SEND":"INICIAR SESION"
+    },
+
+    "REGISTER":{
+        "TITLE":"REGISTRO",
+        "ROL":"Rol",
+        "USER":"Usuario",
+        "PASS":"Contraseña",
+
+        "NAME":"Nombre",
+        "LASTNAME": "Apellido",
+        "SEX": "Sexo",
+        "EMAIL": "Correo Electronico",
+        "COUNTRY": "Pais",
+        "INSTITUTION": "Institucion",
+        "PROGRAM": "Programa",
+
+        "SEND":"REGISTRAR"
     }
 }

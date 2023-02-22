@@ -1,0 +1,88 @@
+
+<div class="contenedorRegistro">
+    <mat-card class="example-card" style="width: 50%;">
+        <mat-card-header>
+            <mat-card-title>{{"REGISTER.TITLE" | translate }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{"REGISTER.ROL" | translate }}</mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="1">Option 1</mat-option>
+                  <mat-option value="2">Option 2</mat-option>
+                  <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{"REGISTER.USER" | translate }}:</mat-label>
+                <input matInput>
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{"REGISTER.PASS" | translate }}:</mat-label>
+                <input matInput>
+                </mat-form-field></td>
+            </tr></table>
+
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{"REGISTER.NAME" | translate }}:</mat-label>
+                <input matInput>
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{"REGISTER.LASTNAME" | translate }}:</mat-label>
+                <input matInput>
+                </mat-form-field></td>
+            </tr></table>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{"REGISTER.EMAIL" | translate }}:</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td>            <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{"REGISTER.SEX" | translate }}</mat-label>
+                    <mat-select disableRipple>
+                      <mat-option value="1">Option 1</mat-option>
+                      <mat-option value="2">Option 2</mat-option>
+                      <mat-option value="3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field></td>
+                <td>            <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{"REGISTER.COUNTRY" | translate }}</mat-label>
+                    <mat-select disableRipple>
+                      <mat-option value="1">Option 1</mat-option>
+                      <mat-option value="2">Option 2</mat-option>
+                      <mat-option value="3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field></td>
+            </tr></table>
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td>            <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{"REGISTER.INSTITUTION" | translate }}</mat-label>
+                    <mat-select disableRipple>
+                      <mat-option value="1">Option 1</mat-option>
+                      <mat-option value="2">Option 2</mat-option>
+                      <mat-option value="3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field></td>
+                <td>            <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{"REGISTER.PROGRAM" | translate }}</mat-label>
+                    <mat-select disableRipple>
+                      <mat-option value="1">Option 1</mat-option>
+                      <mat-option value="2">Option 2</mat-option>
+                      <mat-option value="3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field></td>
+            </tr></table>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button color="primary" class="example-full-width">{{"REGISTER.SEND" | translate }}</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

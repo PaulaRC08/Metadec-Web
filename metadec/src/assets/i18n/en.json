@@ -5,5 +5,21 @@
         "USER":"User",
         "PASS":"Password",
         "SEND":"LOGIN"
+    },
+    "REGISTER":{
+        "TITLE":"REGISTER",
+        "ROL":"Rol",
+        "USER":"User",
+        "PASS":"Password",
+
+        "NAME":"Name",
+        "LASTNAME": "Last Name",
+        "SEX": "Sex",
+        "EMAIL": "Email",
+        "COUNTRY": "Country",
+        "INSTITUTION": "Institution",
+        "PROGRAM": "Program",
+
+        "SEND":"REGISTER"
     }
 }

@@ -9,6 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedmaterialModule } from './components/sharedmaterial/sharedmaterial.module';
+
 
 
 export function HttpLoaderFactory( http: HttpClient){
@@ -22,7 +26,8 @@ export function HttpLoaderFactory( http: HttpClient){
   declarations: [
     AppComponent,
     InicioComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ export function HttpLoaderFactory( http: HttpClient){
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    BrowserAnimationsModule,
+    SharedmaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

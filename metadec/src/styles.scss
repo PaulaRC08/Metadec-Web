@@ -1,26 +1,90 @@
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
-
-$all-colors: map-merge-multiple($cyans);
-
-$utilities: map-merge(
-  $utilities,
-  (
-    "background-color": map-merge(
-      map-get($utilities, "background-color"),
-      (
-        values: map-merge(
-          map-get(map-get($utilities, "background-color"), "values"),
-          (
-            $all-colors
-          ),
-        ),
-      ),
-    ),
+@use '@angular/material' as mat;
+@include mat.core();
+$bright-navy-blue-palette: (
+  50: #e3f7ff,
+  100: #b9ebff,
+  200: #8bdeff,
+  300: #60d1fa,
+  400: #45c7f5,
+  500: #3dbdef,
+  600: #35adda,
+  700: #2899be,
+  800: #1c85a5,
+  900: #006377,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
   )
 );
+$gainsboro-palette: (
+  50: #f9f9fa,
+  100: #eeeeee,
+  200: #e3e3e3,
+  300: #d1d1d1,
+  400: #acacac,
+  500: #8b8b8b,
+  600: #646464,
+  700: #515151,
+  800: #333333,
+  900: #131313,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+$crimson-palette: (
+  50: #f7e6e7,
+  100: #eac2c3,
+  200: #cc8983,
+  300: #b45f56,
+  400: #b44131,
+  500: #b03114,
+  600: #a32914,
+  700: #942110,
+  800: #871b0b,
+  900: #771400,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+$metadec-primary: mat.define-palette($bright-navy-blue-palette, 800, 500, 900);
+$metadec-accent: mat.define-palette($gainsboro-palette, 800, 300, 500);
+$metadec-warn: mat.define-palette($crimson-palette, 700);
+$metadec-theme: mat.define-light-theme((
+  color: (
+    primary: $metadec-primary,
+    accent: $metadec-accent,
+    warn: $metadec-warn,
+  )
+));
+@include mat.all-component-themes($metadec-theme);
 
-@import "bootstrap/scss/utilities/api";
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Josefin Sans', sans-serif; }
+button {font-family: 'Josefin Sans', sans-serif; }
+
