@@ -1,0 +1,9 @@
+{
+    "HELLO": "hello",
+    "LOGIN":{
+        "TITLE":"LOGIN",
+        "USER":"User",
+        "PASS":"Password",
+        "SEND":"LOGIN"
+    }
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'metadec';
+
+  constructor(public translate: TranslateService){
+    this.translate.addLangs(['es','en']);
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
+
+  }
 }

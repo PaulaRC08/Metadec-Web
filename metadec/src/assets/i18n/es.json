@@ -1,0 +1,9 @@
+{
+    "HELLO": "hola",
+    "LOGIN":{
+        "TITLE":"INICIO SESION",
+        "USER":"Usuario",
+        "PASS":"Contraseña",
+        "SEND":"INICIAR SESION"
+    }
+}
