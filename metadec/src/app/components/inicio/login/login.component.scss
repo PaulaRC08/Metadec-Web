@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.example-card{
+    max-width: 60vh; 
+    margin: auto;
+}
+.example-full-width {
+    width: 100%;
+}
+
+h1{
+    font-family: 'Lemon/Milk light', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+
+mat-card-header{
+    display: block;
+}
+
+mat-error{
+    font-style: italic;
+    font-weight: 300;
+}
+
+
+::ng-deep .mat-mdc-snack-bar-container {
+    &.blue-snackbar {
+      --mdc-snackbar-container-color: #771400 !important;
+      --mat-mdc-snack-bar-button-color: #fff
+      --mdc-snackbar-supporting-text-color: #fff;
+    }
+  }

@@ -4,6 +4,7 @@
         "TITLE":"INICIO SESION",
         "USER":"Usuario",
         "PASS":"Contraseña",
+        "REGISTER":"Registrarse",
         "SEND":"INICIAR SESION"
     },
 
@@ -22,5 +23,43 @@
         "PROGRAM": "Programa",
 
         "SEND":"REGISTRAR"
+    },
+    "SESSION":{
+        "TITLE":"CREAR SESION DE AULA ESPEJO",
+        "CLASS":"CLASE",
+        "DATE":"FECHA PROGRAMADA",
+
+        "HYPERLINKS":"HIPERVINCULOS",
+        "DESCRIPTION": "Añade un maximo de 15 link para ver en el mundo virtual de METADEC",
+        "ADDHYPERLINK": "AÑADIR HIPERVINCULO",
+        "TITLEHYPERLINK": "Titulo hipervinculo",
+        "URL": "URL hipervinculo",
+        "TYPE": "Tipo de hipervinculo",
+        "SEND":"PROGRAMAR SESION"
+    },
+
+    
+    "PROGRAM":{
+        "TITLE":"PROGRAMA",
+        "NAME":"Programa",
+        "INSTITUTION":"Institucion",
+        "SEND":"AÑADIR PROGRAMA"
+    },
+    "INSTITUTION":{
+        "TITLE":"INSTITUCION",
+        "INSTITUTION":"Institucion",
+        "COUNTRY":"Pais",
+        "SEND":"AÑADIR INSTITUCION"
+    },
+
+    "CLASS":{
+        "TITLE":"CLASE",
+        "CLASS":"Clase",
+        "PROGRAM":"Programa",
+        "GROUP":"Grupo",
+        "BIMESTER": "Bimestre",
+        "THEACHER": "Docente",
+        "SEND":"AÑADIR CLASE"
     }
+
 }

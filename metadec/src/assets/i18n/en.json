@@ -4,6 +4,7 @@
         "TITLE":"LOGIN",
         "USER":"User",
         "PASS":"Password",
+        "REGISTER":"REGISTER",
         "SEND":"LOGIN"
     },
     "REGISTER":{
@@ -21,5 +22,41 @@
         "PROGRAM": "Program",
 
         "SEND":"REGISTER"
+    },
+    "SESSION":{
+        "TITLE":"CREATE MIRROR CLASSROOM SESSION",
+        "CLASS":"CLASS",
+        "DATE":"SCHEDULED DATE",
+
+        "HYPERLINKS":"HYPERLINKS",
+        "DESCRIPTION": "Add a maximum of 15 links to see in the virtual world of METADEC",
+        "ADDHYPERLINK": "ADD HYPERLINK",
+        "TITLEHYPERLINK": "Title hyperlink",
+        "URL": "URL hyperlink",
+        "TYPE": "Hyperlink type",
+        "SEND":"SCHEDULE SESSION"
+    },
+
+    "PROGRAM":{
+        "TITLE":"PROGRAM",
+        "NAME":"Program",
+        "INSTITUTION":"Institution",
+        "SEND":"ADD PROGRAM"
+    },
+
+    "INSTITUTION":{
+        "TITLE":"INSTITUTION",
+        "INSTITUTION":"Institution",
+        "COUNTRY":"Country",
+        "SEND":"ADD INSTITUTION"
+    },
+    "CLASS":{
+        "TITLE":"CLASS",
+        "CLASS":"Class",
+        "PROGRAM":"Program",
+        "BIMESTER": "Bimester",
+        "GROUP": "Group",
+        "THEACHER": "Theacher",
+        "SEND":"ADD CLASS"
     }
 }

@@ -1,0 +1,22 @@
+h1{
+    font-family: 'Lemon/Milk light', sans-serif;
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+p{
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+hr{
+    max-width: 65px;
+    border:  3px #2899be solid;
+}
