@@ -60,8 +60,9 @@
                           <td><mat-form-field appearance="fill">
                             <mat-label>{{"REGISTER.SEX" | translate }}</mat-label>
                             <mat-select formControlName="sexo">
-                              <mat-option value="Docente">Docente</mat-option>
-                              <mat-option value="Estudiante">Estudiante</mat-option>
+                              <mat-option value="Femenino">Femenino</mat-option>
+                              <mat-option value="Masculino">Masculino</mat-option>
+                              <mat-option value="Otro">Otro</mat-option>
                             </mat-select>
                             <mat-error *ngIf="secondFormGroup.get('sexo')?.hasError('required') && secondFormGroup.get('sexo')?.touched">
                               Sexo Requerido
@@ -84,8 +85,8 @@
                         <mat-form-field appearance="fill" class="example-full-width">
                           <mat-label>{{"REGISTER.COUNTRY" | translate }}</mat-label>
                           <mat-select formControlName="pais">
-                            <mat-option value="Docente">Docente</mat-option>
-                            <mat-option value="Estudiante">Estudiante</mat-option>
+                            <mat-option value="1">Colombia</mat-option>
+                            <mat-option value="2">Peru</mat-option>
                           </mat-select>
                           <mat-error *ngIf="secondFormGroup.get('pais')?.hasError('required') && secondFormGroup.get('pais')?.touched">
                             Pais Requerido
@@ -110,9 +111,9 @@
                         </mat-error>
                     </mat-form-field>
                     <!--PROGRAMA-->
-                    <mat-form-field appearance="fill" class="example-full-width">
+                    <mat-form-field appearance="fill" class="example-full-width" *ngIf="firstFormGroup.get('rol')?.value === 'Estudiante'">
                       <mat-label>{{"REGISTER.PROGRAM" | translate }}</mat-label>
-                      <mat-select formControlName="programa">
+                      <mat-select formControlName="programa" required>
                         <mat-option value="Docente">Docente</mat-option>
                         <mat-option value="Estudiante">Estudiante</mat-option>
                       </mat-select>
@@ -126,7 +127,7 @@
                   </form>
                 </mat-step>
                 <mat-step [stepControl]="fourFormGroup" label="Inicio de sesion">
-                    <form [formGroup]="fourFormGroup" (ngSubmit)=log()>
+                    <form [formGroup]="fourFormGroup" (ngSubmit)=registrarUsuario()>
                         <!--Usuario-->
                         <mat-form-field class="example-full-width" style="margin-bottom: 0px;">
                             <mat-label>{{"REGISTER.USER" | translate }}</mat-label>
@@ -140,7 +141,7 @@
                         <mat-form-field class="example-full-width" style="margin-bottom: 0px;">
                           <mat-label>{{"REGISTER.PASS" | translate }}</mat-label>
                           <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-                          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                           </button>
                           <mat-error *ngIf="fourFormGroup.get('password')?.hasError('minlength') && fourFormGroup.get('password')?.touched">
@@ -164,6 +165,7 @@
                 </mat-step>
 
             </mat-stepper>
+            <app-loading *ngIf="loading"></app-loading>
             </mat-card-content>
         </mat-card>
     </div>

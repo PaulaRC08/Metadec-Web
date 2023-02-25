@@ -10,8 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedmaterialModule } from './shared/sharedmaterial/sharedmaterial.module';
-import { InicioComponent } from './components/inicio/inicio.component';
 
+import { InicioComponent } from './components/inicio/inicio.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
 import { LoginComponent } from './components/inicio/login/login.component';

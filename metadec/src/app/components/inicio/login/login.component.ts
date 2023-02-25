@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 import { UserLogin } from '../../../models/userlogin';
 
 @Component({
@@ -13,14 +14,16 @@ export class LoginComponent {
 
   login: FormGroup;
   loading = false;
+  hide = true;
 
   constructor(private fb: FormBuilder,
               private snackBar: MatSnackBar,
               private route: ActivatedRoute,
-              private router:Router){
+              private router:Router,
+              private loginService: LoginService){
     this.login = this.fb.group({
       usuario: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -33,20 +36,19 @@ export class LoginComponent {
 
     this.loading = true;
     
-    setTimeout(()=>{
-      if(userlogin.usuario === "Paula" && userlogin.password === "123"){
-        this.router.navigate(['/dashboard'])
-      }else{
-        this.snackBar.open(" ERROR: Datos Incorrectos", '',{
-          duration: 3000,
-          verticalPosition: 'top',
-          panelClass: ['blue-snackbar']
-        });
-      }
-      this.login.reset();
-    }
-    ,3000);
-
+    this.loginService.login(userlogin).subscribe(data => {
+      //console.log(data.usuario.nombres);
+      this.loginService.setLocalStorage(data.token);
+      this.loading = false;
+      this.router.navigate(['/dashboard/dash-content'])
+    }, error => {
+      this.loading = false;
+      this.snackBar.open(" ERROR: "+ error.error.message.toUpperCase(), '',{
+        duration: 3000,
+        verticalPosition: 'top',
+        panelClass: ['error-snackbar']
+      });
+    });
     
   }
 

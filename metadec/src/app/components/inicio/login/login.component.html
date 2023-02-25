@@ -16,11 +16,17 @@
                     Usuario Requerido
                 </mat-error>
               </mat-form-field>
-              <mat-form-field class="example-full-width" style="margin-bottom: 10px;">
+
+              <mat-form-field class="example-full-width" style="margin-bottom: 0px;">
                 <mat-label>{{"LOGIN.PASS" | translate }}</mat-label>
-                <input matInput type="text" formControlName="password">
-                <mat-icon matSuffix>lock</mat-icon>
-                <mat-error *ngIf="login.get('usuario')?.hasError('required') && login.get('usuario')?.touched">
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="login.get('password')?.hasError('minlength') && login.get('password')?.touched">
+                  Contraseña 8 Cartacteres
+                </mat-error>
+                <mat-error *ngIf="login.get('password')?.hasError('required') && login.get('password')?.touched">
                     Contraseña Requerida
                 </mat-error>
               </mat-form-field>

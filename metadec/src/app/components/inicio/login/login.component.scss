@@ -31,8 +31,16 @@ mat-error{
 
 
 ::ng-deep .mat-mdc-snack-bar-container {
-    &.blue-snackbar {
+    &.error-snackbar {
       --mdc-snackbar-container-color: #771400 !important;
+      --mat-mdc-snack-bar-button-color: #fff
+      --mdc-snackbar-supporting-text-color: #fff;
+    }
+  }
+
+  ::ng-deep .mat-mdc-snack-bar-container {
+    &.success-snackbar {
+      --mdc-snackbar-container-color: #046b2f !important;
       --mat-mdc-snack-bar-button-color: #fff
       --mdc-snackbar-supporting-text-color: #fff;
     }
