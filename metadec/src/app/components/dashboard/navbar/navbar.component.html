@@ -1,9 +1,35 @@
-<mat-toolbar color="accent">
-    <mat-icon>public</mat-icon>
-    <span>METADEC</span>
-    <span class="example-spacer" ></span>
-    <button mat-flat-button color="accent">Basic</button>
-    <button mat-flat-button class="example-icon" color="primary" (click)="logOut()"> SALIR
-      <mat-icon>logout</mat-icon>
-    </button>
-</mat-toolbar>
+<div> 
+  <mat-toolbar color="accent">
+      <button mat-button style="padding: 0; margin: 0;" routerLink="/dashboard/dash-content">
+          <img class="img-fluid" src="../../../../assets/img/logo.png">
+      </button>
+      <a style="margin-left: 10px;" class="nombreMetadec" routerLink="/dashboard/dash-content">METADEC</a>
+      <span class="example-spacer" ></span>
+      <div fxShow="true" fxHide.gt-sm="true">
+          <button mat-icon-button (click)="sidenav.toggle()" >
+            <mat-icon>menu</mat-icon>
+          </button>
+      </div>
+
+      <div fxShow="true" fxHide.lt-md="true" style="height: 100%;">
+          <button mat-flat-button color="accent" routerLink="/dashboard/sesion"><mat-icon>school</mat-icon>SESIONES</button>
+          <button mat-flat-button class="example-icon" color="primary" (click)="logOut()">  SALIR
+              <mat-icon class="material-symbols-outlined">logout</mat-icon>
+          </button>
+      </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column" style="margin-top: 50px;">
+        <button mat-flat-button routerLink="/dashboard/sesion"><mat-icon>event</mat-icon>CREAR SESION</button>
+        <button mat-flat-button class="example-icon" color="primary" (click)="logOut()">  SALIR
+            <mat-icon class="material-symbols-outlined">logout</mat-icon>
+        </button>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <app-dashboard></app-dashboard>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

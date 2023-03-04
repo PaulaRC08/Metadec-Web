@@ -1,0 +1,70 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 5vh;
+    min-height: 20vh;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0, 0, 0, 0.8)),url(../../../../assets/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.fondoNetiqueta{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 0;
+  background: url(../../../../assets/img/FondoNetiqueta.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.fondoNetiqueta img{
+  width: 95%;
+}
+
+@media (min-width: 900px) {
+  .fondoNetiqueta img {  width: 85%;}
+}
+
+.rayita-azul{
+    max-width: 80px;
+    border:  3px #2899be solid;
+}
+
+.tituloBlanco{
+    font-family: 'Lemon/Milk light', sans-serif;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+
+@media screen and (min-width: 601px) {
+    .tituloBlanco {
+        font-size: 7rem;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 600px) {
+    .tituloBlanco{
+        font-size: 3rem;
+    }
+  }
+
+  .cards {
+    margin: 0;
+    width: 90%;
+    display: grid;
+  }
+
+  @media (min-width: 900px) {
+    .cards { grid-template-columns: repeat(2, 1fr);
+            margin: 0;
+            width: 60%;
+            }
+  }
+
+  

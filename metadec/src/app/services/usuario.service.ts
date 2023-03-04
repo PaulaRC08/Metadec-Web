@@ -9,6 +9,8 @@ import { User } from '../models/usuario';
 })
 export class UsuarioService {
 
+  urlUser?: string;
+
   myAppUrl: string;
   myApiUrl: string; 
 
@@ -18,7 +20,17 @@ export class UsuarioService {
   }
 
   saveUser(usuario: User): Observable<any> {
-    return this.http.post(this.myAppUrl+this.myApiUrl, usuario)
+    return this.http.post(this.myAppUrl+this.myApiUrl, usuario);
+  }
+  setLocalStorage(data: any): void {
+    localStorage.setItem('userRegister',data);
+  }
+  getLocalStorage(): any {
+    localStorage.getItem('userRegister');
+  }
+
+  removeLocalStorage(){
+    return localStorage.removeItem('userRegister');
   }
 
 }

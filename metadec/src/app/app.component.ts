@@ -8,12 +8,12 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'metadec';
+  title? = 'metadec';
 
   constructor(public translate: TranslateService){
     this.translate.addLangs(['es','en']);
     this.translate.setDefaultLang('es');
-    this.translate.use('en');
-
+    this.translate.use('es');
+    this.title = this.translate.currentLang;
   }
 }

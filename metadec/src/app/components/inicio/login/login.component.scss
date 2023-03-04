@@ -1,3 +1,12 @@
+
+.layout{
+    
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0, 0, 0, 0.8)),url(../../../../assets/img/fondo.png);
+  background-size: cover;
+  background-position: center;
+  
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -44,4 +53,11 @@ mat-error{
       --mat-mdc-snack-bar-button-color: #fff
       --mdc-snackbar-supporting-text-color: #fff;
     }
+  }
+
+  .registro{text-align: end;}
+  .registro a{
+    font-size: medium;
+    color:#2899be ;
+    font-weight: 500;
   }

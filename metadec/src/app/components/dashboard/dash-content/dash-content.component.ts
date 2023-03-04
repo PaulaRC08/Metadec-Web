@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from '../../../../app/services/login.service';
+import { } from 'angular-highcharts';
+import { ChartModule } from 'angular-highcharts';
 
 @Component({
   selector: 'app-dash-content',
@@ -9,6 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class DashContentComponent {
 
   nombreusuario?: string;
+  idUsuario?: Number;
 
   constructor(private loginService: LoginService){}
 
@@ -18,7 +21,9 @@ export class DashContentComponent {
 
   getNombreUsuario(): void{
     this.nombreusuario = this.loginService.getTokenDecoded().sub;
-    console.log(this.loginService.getTokenDecoded());
+    this.idUsuario = this.loginService.getTokenDecoded().sub;
+    console.log(this.loginService.getTokenDecoded().sub);
   }
 
 }
+

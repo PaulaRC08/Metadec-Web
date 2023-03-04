@@ -1,13 +1,139 @@
 
 <div class="container">
     <div class="center">
-        <h1>METADEC</h1>
-        <p>Metaverso para la culturizacion el aulas virtuales</p>
+        <img width="150vw" style="margin-bottom: 0;" src="../../../../assets/img/logotop.png">
+        <h1 class="tituloBlanco">METADEC</h1>
+        <h4>METAVERSO PARA LA CULTURIZACION EN AULAS ESPEJO</h4>
         <hr><br>
-        <button mat-fab extended color="primary" routerLink="/inicio/login">
-            <mat-icon>person</mat-icon>
-            INICIAR SESION
+        <button mat-fab extended color="primary" (click)="descarga()">
+            <mat-icon>cloud_download</mat-icon>
+            DESGARGAR
         </button>
     </div>
 </div>
+<div class="center">
+    <h1 style="font-size: 3.5rem;">CONOCE METADEC
+    <img src="../../../../assets/img/fecha.png" width="40vh">
+    </h1>    
+</div>
 
+<div class="fondoCirculos">
+    <div class="cards" style="background-color: white; margin: auto; ">
+        <div>
+            <img src="../../../../assets/img/PORTADAaz.png" width="100%" height="100%">
+        </div>
+        <div class="concepto">
+            <div>
+                <h1 color="primary" style="font-weight: 400; text-align: center; font-size: 5vh;">CONCEPTO</h1>
+                <hr>
+                <p style ="line-height: 150%; text-align: justify;">
+                    Metadec es un mundo virtual enfocado a la internacionalización virtual de los estudiantes en la Universidad 
+                    de Cundinamarca, este espacio virtual estará abierto a cualquier alumno registrado en la institución y de 
+                    universidades internacionales en convenio que haga parte de una clase Aula espejo con el fin de que les dé 
+                    la posibilidad de hablar con naturalidad de su cultura
+                </p>
+            </div>
+        </div>
+    
+    </div>
+</div>
+<br>
+
+<div class="center" style="background-color: #1C85A5; margin-top: 20px;">
+    <div style="background-color: white; width: fit-content; margin: auto;">
+        <h1 style="font-size: 6vh; padding: 1vw 1vw; margin: 0;">
+            ACTIVIDADES 
+            <h1 style="font-size: 7vh; font-weight: 300; display:inline; margin: 0;">INTERACTIVAS</h1>
+        </h1>
+    </div>
+</div>
+
+
+<div style="background-color: #f1f1f1; padding: 5vh 0;">
+    <div class="cardsThird" >
+        <div class="centerDiv">
+            <mat-card class="example-card accent" style="background-color: #333333;">
+                <mat-card-header style="  display: flex; justify-content: center;">
+                    <h1 style="font-size: 1.8rem; font-weight: 400; color: #fff;">CANCHAS</h1>
+                </mat-card-header>
+                <img mat-card-image src="../../../../assets/img/ActividadCanchas.png" width="100%">
+                <mat-card-content>
+                  <p class="pCardActivity">
+                    La actividad con tematica de deportes se localizara en la cancha de futbol en el experior de la universidad.
+                  </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="centerDiv">
+            <mat-card class="example-card accent" style="background-color: #333333;">
+                <mat-card-header style="  display: flex; justify-content: center;">
+                    <h1 style="font-size: 1.8rem; font-weight: 400; color: #fff;">BIENESTAR</h1>
+                </mat-card-header>
+                <img mat-card-image src="../../../../assets/img/ActividadBienestar.png" width="100%">
+                <mat-card-content>
+                  <p class="pCardActivity">
+                    La actividad con tematica de ajedrez se localizara en el salon de bienestar ubicado en el àrea administrativa.
+                  </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="centerDiv">
+            <mat-card class="example-card accent" style="background-color: #333333;">
+                <mat-card-header style="  display: flex; justify-content: center;">
+                    <h1 style="font-size: 1.8rem; font-weight: 400; color: #fff;">RESTAURANTE</h1>
+                </mat-card-header>
+                <img mat-card-image src="../../../../assets/img/actividadRestauranteC.png" width="100%">
+                <mat-card-content>
+                  <p class="pCardActivity">
+                    La actividad con tematica de cafetera se localizara en el restaurante encontrado en el tercer piso.
+                  </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    
+    </div>
+</div>
+
+<div class="center">
+    
+    <h1 style="font-size: 3rem; color: #156a85;">
+        <img src="../../../../assets/img/titleleft.png" width="40vh">
+        UNA VISTA A METADEC
+    <img src="../../../../assets/img/titleright.png" width="40vh">
+    </h1>    
+</div>
+
+<div>
+    <div class="cardsFour" >
+        <div>
+            <img src="../../../../assets/img/actividadRestauranteC.png" sizes="cover" height="250px" width="100%">
+        </div>
+        <div>
+            <img src="../../../../assets/img/ActividadCanchas.png" sizes="cover" height="250px" width="100%">
+        </div>
+        <div>
+            <img src="../../../../assets/img/ActividadBienestar.png" sizes="cover" height="250px" width="100%">
+        </div>
+        <div>
+            <img src="../../../../assets/img/fondo.png" sizes="cover" height="250px" width="100%">
+        </div>
+    </div>
+</div>
+
+<div style="background-color: #333333; margin-top: 30px;">
+    <div class="cards" style="margin: auto;">
+        <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+            <img src="../../../../assets/img/logoBlanco.png" height="80px">
+        </div>
+        <div style="padding-left: 20px;">
+            <h1 style="color: #fff;">CONTACTO</h1>
+            <h4 style="font-weight: 300; margin: 5px 0;" >Universidad de Cundinamarca</h4>
+            <h4 style="font-weight: 300; margin: 5px 0;">Extension Chia</h4>
+            <h4 style="font-weight: 300; margin: 5px 0;">solicitududes.metadec@gmail.com</h4>
+            <br>
+        </div>
+    </div>
+</div>
+<div class="center" style="background-color: #222222;">
+    <h3 style="margin: 0; color: #fff; font-weight: 300; padding: 2vh;">© 2023 Copyright: MetadecUdec.com</h3>
+</div>

@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="center">
+        <h1 class="tituloBlanco">SESIONES</h1>
+        <hr class="hrTitle"><br>
+        <button mat-fab extended color="primary" routerLink="/dashboard/crear-sesion">
+            <mat-icon>today</mat-icon>
+            PROGRAMAR SESION
+        </button>
+    </div>
+</div>
+
+<div class="center" style="margin-top: 20px;" >
+    <h1 style="font-size: 5vh; padding: 1vw 1vw; margin: 0;">
+        SESIONES
+        <h1 style="font-size: 5.5vh; font-weight: 300; display:inline; margin: 0;">PROGRAMADADAS</h1>
+    </h1>
+    <h2 style="font-weight: 300; margin: 0;">Sesiones programadas ordenadas segun la fecha mas cercana</h2>
+</div>
+
+<div style="padding: 5vh 0;" class="fondoCard">
+    <div class="cardsThird" >
+        <div class="centerDiv" *ngFor="let sesion of Sesiones, let i = index">
+            <mat-card class="example-card accent" [ngStyle]="{'background-color': getColor(i)}">               
+                <mat-card-content style="padding: 2vh; padding-bottom: 0;">
+                    <div style="text-align: center;">
+                        <h1 class="titleCard">{{sesion.idSesionNavigation.clase}}</h1>
+                        <h4 class="titleFechaCard">
+                            <mat-icon>event</mat-icon> 
+                            FECHA SESION:  
+                            <h4 class="fechaCard">
+                                {{sesion.idSesionNavigation.fechaSesion.substr(0,10)}}
+                            </h4>
+                        </h4>
+                    </div>
+                    <hr class="hrCard">
+                    <div class="divInfoSesion">
+                        <h4 class="titleInfo">
+                            <mat-icon style="margin: auto; padding: 0;">edit</mat-icon> 
+                            CODIGO SESION:  
+                        </h4>
+                        <h4 class="textInfo">
+                            {{sesion.idSesionNavigation.codigoSesion}}
+                       </h4>
+    
+                        <h4 class="titleInfo">
+                            <mat-icon style="margin: auto; padding: 0;">key</mat-icon> 
+                            CONTRASEÑA SESION:  
+                        </h4>
+                        <h4 class="textInfo">
+                            {{sesion.idSesionNavigation.password}}
+                        </h4>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <h3 style="font-weight: 300; margin-right: 10px;">Copia la info</h3>
+                    <button mat-mini-fab [ngStyle]="{'background-color': getColorBtn(i)}" [cdkCopyToClipboard]="crearClipboard(sesion.idSesionNavigation.codigoSesion,sesion.idSesionNavigation.password)" type="button" (click)="snackBarCLip()">
+                        <mat-icon>copy_all</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
+

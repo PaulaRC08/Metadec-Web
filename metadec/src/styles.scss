@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+
 @include mat.core();
 $bright-navy-blue-palette: (
   50: #e3f7ff,
@@ -75,20 +76,40 @@ $crimson-palette: (
 $metadec-primary: mat.define-palette($bright-navy-blue-palette, 800, 500, 900);
 $metadec-accent: mat.define-palette($gainsboro-palette, 800, 300, 500);
 $metadec-warn: mat.define-palette($crimson-palette, 700);
+$kids-typography: mat.define-typography-config(
+  $font-family:'Josefin Sans',
+);
 $metadec-theme: mat.define-light-theme((
   color: (
     primary: $metadec-primary,
     accent: $metadec-accent,
     warn: $metadec-warn,
-  )
+  ),
+  typography: $kids-typography,
 ));
 @include mat.all-component-themes($metadec-theme);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Josefin Sans', sans-serif; }
-button {font-family: 'Josefin Sans', sans-serif; }
+button {font-family: 'Josefin Sans', sans-serif !important; }
 
 .center {
   text-align: center;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(37, 37, 37);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(138, 138, 138);    /* color of the scroll thumb */
+ /* creates padding around scroll thumb */
+}
+.example-full-width {
+  width: 100%;
 }
 

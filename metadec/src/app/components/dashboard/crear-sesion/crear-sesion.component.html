@@ -1,0 +1,139 @@
+<div class="container">
+    <div class="center">
+        <h1 class="tituloBlanco">PROGRAMAR SESION</h1>
+        <hr class="rayita-azul">
+
+    </div>
+</div>
+<div class="contenido-page">
+    <mat-card class="example-card">
+        <mat-card-header>
+                <h2 style="margin:0;">SESION AULA ESPEJO</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <hr>
+            <br><br>
+
+            <div class="inputs-info">
+
+                <form [formGroup]="sesionForm" (ngSubmit)=guardarSesion()>
+
+                <mat-form-field class="example-full-width" style="margin-bottom: 8px;">
+                    <mat-label>Clase Aula Espejo:</mat-label>
+                    <input matInput type="text" formControlName="clase">
+                    <mat-icon matSuffix class="material-symbols-outlined">square_foot</mat-icon>
+                    <mat-error *ngIf="sesionForm.get('clase')?.hasError('required') && sesionForm.get('clase')?.touched">
+                        Nombre de la clase Requerido
+                    </mat-error>
+                  </mat-form-field>
+
+                  <!--<mat-form-field appearance="fill"  class="example-full-width" style="margin-bottom: 10px;">
+                    <mat-label>Fecha Sesion:</mat-label>
+                    <input matInput [matDatepicker]="picker" [disabled]="true" formControlName="fecha">
+                    <mat-hint>YYYY/MM/DD</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="sesionForm.get('fecha')?.hasError('required') && sesionForm.get('fecha')?.touched">
+                        Fecha Requerido
+                    </mat-error>
+                </mat-form-field>-->
+
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Fecha Sesion:</mat-label>
+                    <input matInput [min]="mindate" [matDatepickerFilter]="myFilter" [matDatepicker]="picker"  formControlName="fecha">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                  
+
+                <h3 class="center">-------------HIPERVINCULOS------------</h3>
+                <ng-container formArrayName="hipervinculos" >
+                <ng-container *ngFor="let item of getHipervinculos.controls; let i = index">
+                    <ng-container [formGroupName]="i">
+                        <mat-card style="background-color: #333333; padding-bottom: 0; margin-bottom: 10px;">
+                            <mat-card-header  style="color:white">
+                                <mat-card-title color="white">
+                                    <mat-icon matSuffix>mouse</mat-icon>
+                                    ENLACE {{i+1}}
+                                </mat-card-title>
+                                <span class="example-spacer"></span>
+                                <button mat-flat-button color="primary" type="button" (click)="eliminarHipervinculo(i)">
+                                    <mat-icon matSuffix>delete</mat-icon>
+                                    Eliminar
+                                </button>
+                            </mat-card-header>
+                            <mat-card-content style="color:white; padding-top: 0;">
+                                <hr>
+                                <div class="cards">
+                                    <!--Tipo Hipervinculo-->
+                                    <mat-form-field class="example-full-width" style="margin-bottom: 0px;">
+                                        <mat-label>Titulo Enlace</mat-label>
+                                        <input matInput type="text" formControlName="nombreHipervinculo" required>
+                                        <mat-icon matSuffix color="accent">title</mat-icon>
+                                        <mat-error style="color:white;">
+                                            Titulo Requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <!--Nombre-->
+                                    <mat-form-field appearance="fill" style="margin-bottom: 0px;">
+                                      <mat-label>Tipo Enlace</mat-label>
+                                      <mat-select formControlName="tipoHipervinculo" required>
+                                        <mat-option value="Herramienta"> 
+                                            <mat-icon color="accent">build</mat-icon>
+                                            Herramienta
+                                        </mat-option>
+                                        <mat-option value="Herramienta"> 
+                                            <mat-icon color="accent">info</mat-icon>
+                                            Informacion
+                                        </mat-option>
+                                        <mat-option value="Herramienta"> 
+                                            <mat-icon color="accent">school</mat-icon>
+                                            Plaforma Academica
+                                        </mat-option>
+                                      </mat-select>
+                                      <mat-error style="color:white;">
+                                        Tipo Enlace Requerido
+                                      </mat-error>
+                                    </mat-form-field>
+                                  </div>
+                                <mat-form-field class="example-full-width" style="margin-bottom: 0px;">
+                                    <mat-label>Url Enlace</mat-label>
+                                    <input matInput type="url" formControlName="urlHipervinculo" required>
+                                    <mat-icon matSuffix color="accent">public</mat-icon>
+                                    <mat-error style="color:white;">
+                                        Url Requerida
+                                    </mat-error>
+                                </mat-form-field>
+                            </mat-card-content>
+                          </mat-card>
+                          
+                    </ng-container>
+                </ng-container>
+                </ng-container>
+
+                <div style="justify-content: end; display: flex;">
+                    <button mat-fab extended color="accent" type="button" (click)="agegarHip()">
+                        <mat-icon>add</mat-icon>
+                        Añadir
+                    </button>
+                </div>
+                <br>
+
+                <button mat-flat-button color="primary" style="margin-bottom: 10px;" class="example-full-width" [disabled]="sesionForm.invalid" type="submit">
+                    PROGRAMAR SESION
+                    <mat-icon>send</mat-icon>
+                </button>
+                
+                </form>
+    
+
+            </div>
+            
+        </mat-card-content>
+        <app-loading *ngIf="loading"></app-loading>
+      </mat-card>
+      
+</div>
+

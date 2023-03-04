@@ -1,0 +1,135 @@
+
+.tituloBlanco{
+    font-family: 'Lemon/Milk light', sans-serif;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 601px) {
+    .tituloBlanco {
+        font-size: 7rem;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 600px) {
+    .tituloBlanco{
+        font-size: 3rem;
+    }
+  }
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 5vh;
+    min-height: 20vh;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0, 0, 0, 0.8)),url(../../../../assets/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.hrTitle{
+    max-width: 80px;
+    border:  3px #2899be solid;
+}
+
+.hrCard{
+    width: 100%;
+    margin: 0 auto;
+    border:  1px #ffffff solid;
+    margin: 7px 0;
+}
+
+:host {
+    display: block;
+    background-color: white;
+}
+
+.fondoCard{
+    background: url(../../../../assets/img/FondoNetiqueta.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+.cardsThird{
+    margin: auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+@media (min-width: 500px) {
+    .cardsThird { grid-template-columns: repeat(2, 1fr);}
+  }
+  
+  /* Screen larger than 900px? 3 columns */
+  @media (min-width: 1000px) {
+    .cardsThird { grid-template-columns: repeat(3, 1fr); margin: auto; width: 70%;}
+  }
+
+  .example-card {
+    max-width: 350px;
+    min-width: 100%;
+    padding: 0.5vw; 
+    padding-bottom: 0; 
+    color: #FFF;
+}
+
+.centerDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.titleCard{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.titleFechaCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    margin: 0 ;
+}
+
+.fechaCard{
+    display:inline; 
+    font-weight: 300; 
+    margin: 0; 
+    margin-left: 1px; 
+    padding: 1vh;
+}
+
+.divInfoSesion{
+    padding: 1vh; 
+    justify-content: center; 
+    color: #333333; 
+    background-color: #FFF;
+}
+
+.titleInfo{
+    align-items: center; 
+    font-weight: 400; 
+    margin: 0;
+}
+
+.textInfo{
+    font-weight: 300; 
+    margin: 0; 
+    margin-left: 5px; 
+    padding: 1vh; 
+    text-align: center;
+}
+
+::ng-deep .mat-mdc-snack-bar-container {
+    &.info-snackbar {
+      --mdc-snackbar-container-color: #106e42 !important;
+      --mat-mdc-snack-bar-button-color: #fff
+      --mdc-snackbar-supporting-text-color: #fff;
+      text-align: center;
+    }
+  }

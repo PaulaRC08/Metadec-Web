@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from '../../../../app/services/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +13,8 @@ export class NavbarComponent {
               private route: ActivatedRoute,
               private router:Router,){}
 
-  logOut(): void{
+  public logOut(): void{
+    console.log("entro al metodo xd")
     this.loginService.removeLocalStorage();
     this.router.navigate(['/inicio'])
   }
