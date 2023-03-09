@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-netiqueta',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./netiqueta.component.scss']
 })
 export class NetiquetaComponent {
+
 
 }

@@ -28,7 +28,7 @@ namespace MetadecBackEnd.Controllers
                 var validateExistence = await _usuarioRepository.ValidateExistence(docente.IdUsuarioNavigation);
                 if (validateExistence)
                 {
-                    return BadRequest(new { message = "Usuario " + docente.IdUsuarioNavigation.Usuario + " ya existe" });
+                    return Ok(new { message = "Usuario ya existe" });
                 }
                 docente.IdUsuarioNavigation.Pasword = Encriptar.EncriptarPassword(docente.IdUsuarioNavigation.Pasword);
 

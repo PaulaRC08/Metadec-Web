@@ -1,0 +1,136 @@
+
+<div class="container">
+  <div class="center">
+      <h1 class="tituloBlanco">{{"DASHADMIN.TITLE" | translate }}</h1>
+      <hr class="lineaAzul">
+
+  </div>
+</div>
+<div class="fondoCirculos">
+  <br>
+  <div style=" padding: 2vh 0;">
+
+    <h1 style="text-align: center; margin-bottom: 0;">{{"DASHADMIN.QUESTION" | translate }}1</h1>
+    <h4 style="text-align: center; font-weight: 400; margin-top: 0;">{{"DASHADMIN.SUBQUESTION1" | translate }}</h4>
+    <br>
+    <div class="centerDiv">
+        <div class="divGraph centerDiv" style="background-color: #5a5a5a; color:white;">
+          <ngx-charts-pie-chart
+            [view]="view"
+            scheme="aqua"
+            [results]="single1"
+            [legend]="showLegend"
+            legendTitle="{{'DASHADMIN.LABEL' | translate }}"
+            [legendPosition]="legendPosition"
+            [labels]="showLabels"
+            [doughnut]="isDoughnut"
+            (select)="onSelect($event)"
+            (activate)="onActivate($event)"
+            (deactivate)="onDeactivate($event)"
+            (window:resize)="onResize($event)"
+            >
+          </ngx-charts-pie-chart>
+        </div>
+    </div>
+
+    <div class="cards">
+      <div class="divGraphfull" style="background-color: #333; color:white;">
+        <h1 style="text-align: center; margin-bottom: 0;">{{"DASHADMIN.QUESTION" | translate }}2</h1>
+        <h4 style="text-align: center; font-weight: 400; margin-top: 0;"> {{"DASHADMIN.SUBQUESTION2" | translate }}</h4>
+        <ngx-charts-pie-chart
+          [view]="view"
+          scheme="aqua"
+          [results]="single2"
+          [legend]="showLegend"
+          legendTitle="{{'DASHADMIN.LABEL' | translate }}"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+          (window:resize)="onResize($event)"
+          >
+        </ngx-charts-pie-chart>
+      </div>
+      <div class="divGraphfull" style="background-color: #1c85a5; color:white;">
+        <h1 style="text-align: center; margin-bottom: 0;">{{"DASHADMIN.QUESTION" | translate }}3</h1>
+        <h4 style="text-align: center; font-weight: 400; margin-top: 0;"> {{"DASHADMIN.SUBQUESTION3" | translate }}</h4>
+        <ngx-charts-pie-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single3"
+          [legend]="showLegend"
+          legendTitle="{{'DASHADMIN.LABEL' | translate }}"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+          (window:resize)="onResize($event)"
+          >
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+
+    <div class="centerDiv">  
+      <div class="divGraphfull" style="background-color: #5a5a5a; color:white; ">
+        <h1 style="text-align: center; margin-bottom: 0;">{{"DASHADMIN.QUESTION" | translate }}4</h1>
+        <h4 style="text-align: center; font-weight: 400; margin-top: 0;">{{"DASHADMIN.SUBQUESTION4" | translate }}</h4>
+        <div class="centerDiv">  
+          <ngx-charts-pie-chart 
+          [view]="view"
+          [scheme]="colorSchemeblue"
+          [results]="single4"
+          [legend]="showLegend"
+          legendTitle="{{'DASHADMIN.LABEL' | translate }}"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+          (window:resize)="onResize($event)"
+          >
+        </ngx-charts-pie-chart>
+        </div>
+      </div>
+  </div>
+
+
+
+    <br><br>
+    <h1 style="text-align: center; margin-bottom: 0;">{{"DASHADMIN.QUESTION" | translate }}5</h1>
+    <h4 style="text-align: center; font-weight: 400; margin-top: 0;">{{"DASHADMIN.SUBQUESTION5" | translate }}</h4>
+    <br>
+    <div>
+      <div class="divGraph centerDiv" style="background-color: #014755; color:white; max-width: 100vw;">
+        
+        <ngx-charts-pie-chart
+          [view]="view"
+          scheme="air"
+          [results]="single5"
+          [legend]="showLegend"
+          legendTitle="{{'DASHADMIN.LABEL' | translate }}"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+          (window:resize)="onResize($event)"
+          >
+        </ngx-charts-pie-chart>
+      </div>
+  </div>
+
+
+  
+
+</div>
+
+
+
+
+</div>

@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="center">
+        <h1 class="tituloBlanco">{{"CHANGEPASS.TITLE" | translate }}</h1>
+        <hr class="rayita-azul">
+
+    </div>
+</div>
+<div class="contenido-page">
+    <mat-card class="example-card">
+        <mat-card-header>
+                <h2 style="margin:0;">{{"CHANGEPASS.SUBTITLE" | translate }}</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <hr>
+            <br><br>
+
+            <div class="inputs-info">
+
+                <form [formGroup]="cambiarForm" (ngSubmit)="cambiarPassword()">
+
+                    <mat-form-field class="example-full-width" style="margin-bottom: 20px;">
+                        <mat-label>{{"CHANGEPASS.PASSACTUAL" | translate }}</mat-label>
+                        <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide1 = !hide1" type="button">
+                          <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error style="margin: 5px;"
+                                *ngIf="!cambiarForm.get('password')?.valid && cambiarForm.get('password')?.touched && !cambiarForm.get('password')?.hasError('required') " style="font-size: small;">
+                                {{"CHANGEPASS.PASSVALIDATIONFORMAT" | translate }}
+                          </mat-error>
+                          <mat-error *ngIf="cambiarForm.get('password')?.hasError('required') && cambiarForm.get('password')?.touched">
+                            {{"CHANGEPASS.PASSVALIDATION" | translate }}
+                          </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" style="margin-bottom: 20px;">
+                        <mat-label>Nueva Contraseña</mat-label>
+                        <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="newPassword">
+                        <button mat-icon-button matSuffix (click)="hide2 = !hide2" type="button">
+                          <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error style="line-height:20%"
+                                *ngIf="!cambiarForm.get('newPassword')?.valid && cambiarForm.get('newPassword')?.touched && !cambiarForm.get('newPassword')?.hasError('required')" style="font-size: small;">
+                                {{"CHANGEPASS.PASSVALIDATIONFORMAT" | translate }}
+                          </mat-error>
+                          <mat-error *ngIf="cambiarForm.get('newPassword')?.hasError('required') && cambiarForm.get('newPassword')?.touched">
+                            {{"CHANGEPASS.PASSNEWVALIDATION" | translate }}
+                          </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" style="margin-bottom: 20px;">
+                        <mat-label>Confirmar Contraseña</mat-label>
+                        <input matInput [type]="hide3 ? 'password' : 'text'" formControlName="confirmPassword">
+                        <button mat-icon-button matSuffix (click)="hide3 = !hide3" type="button">
+                          <mat-icon>{{hide3 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="!cambiarForm.get('confirmPassword')?.valid && cambiarForm.get('confirmPassword')?.touched && !cambiarForm.get('confirmPassword')?.hasError('required')" style="font-size: small;">
+                            {{"CHANGEPASS.PASSVALIDATIONFORMAT" | translate }}
+                          </mat-error>
+                          <mat-error *ngIf="cambiarForm.get('confirmPassword')?.hasError('required') && cambiarForm.get('confirmPassword')?.touched">
+                            {{"CHANGEPASS.PASSCONVALIDATION" | translate }}
+                          </mat-error>
+                    </mat-form-field>
+                  
+
+                <button mat-flat-button color="primary" style="margin-bottom: 10px;" class="example-full-width" [disabled]="cambiarForm.invalid" type="submit">
+                    {{"CHANGEPASS.SEND" | translate }}
+                    <mat-icon>lock</mat-icon>
+                </button>
+                
+                </form>
+    
+
+            </div>
+            
+        </mat-card-content>
+        <app-loading *ngIf="loading" ></app-loading>
+      </mat-card>
+      
+</div>
+

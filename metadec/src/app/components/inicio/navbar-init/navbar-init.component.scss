@@ -4,6 +4,7 @@
 button{
     min-height: 100%;
 }
+.material-icons.color_gray { color: #D1D1D1; }
 
 .img-fluid{
     height: 7vh;
@@ -21,19 +22,22 @@ mat-toolbar{
 .mat-mdc-menu-item {
     padding-top: 4px;
     padding-bottom: 4px;
+    font-size: small !important;
     }
 
-::ng-deep.mat-menu-panel {
+::ng-deep .mat-menu-panel {
     color: #000;
+    font-size: small !important;
     }
 
 button{
-    font-size: small;
+    font-size: small !important;
 }
 
 ::ng-deep {  
     .mat-mdc-menu-panel {  
       max-width: unset !important;  
+      font-size: small!important; 
     }  
 }
 

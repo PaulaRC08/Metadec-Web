@@ -5,14 +5,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../../../../app/services/usuario.service';
 import { User } from '../../../../app/models/usuario';
+import { TranslateService } from '@ngx-translate/core';
 
-function hello(){
+function hello(language: string){
   
   const subdomain = 'demo'; // Replace with your custom subdomain
   const frame = document.getElementById('frame') as HTMLIFrameElement;
-  
-  frame.src = `https://${subdomain}.readyplayer.me/avatar?frameApi&clearCache&bodyType=fullbody`;
-  
+  if(language == "en"){
+    frame.src = `https://${subdomain}.readyplayer.me/en/avatar?frameApi&clearCache&bodyType=fullbody`;
+  }else{
+    frame.src = `https://${subdomain}.readyplayer.me/es/avatar?frameApi&clearCache&bodyType=fullbody`;
+  }
+
   window.addEventListener('message', subscribe);
   document.addEventListener('message', subscribe);
   
@@ -76,6 +80,7 @@ export class AvatarComponent {
   usuario?: User;
 
   constructor(private _formBuilder: FormBuilder,
+              public translate: TranslateService,
               private usuarioService: UsuarioService,
               private snackBar: MatSnackBar,
               private route: ActivatedRoute,
@@ -83,7 +88,7 @@ export class AvatarComponent {
 
   ngOnInit(): void{
     localStorage.removeItem("urlAvatar")
-    hello();
+    hello(this.translate.currentLang);
     window.console.log = () => {}
   }
   ngDoCheck(){

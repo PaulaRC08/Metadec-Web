@@ -3,6 +3,7 @@ using MetadecBackEnd.DTO;
 using MetadecBackEnd.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace MetadecBackEnd.Controllers
 {
@@ -29,10 +30,10 @@ namespace MetadecBackEnd.Controllers
                 var user = await _loginRepository.ValidateUser(login.usuario, password);
                 if (user == null)
                 {
-                    return BadRequest(new { message = "Datos incorrectos" });
+                    return Ok(new { message = "Datos incorrectos" });
                 }
                 string tokenString = JwtConfigurator.GetToken(user, _config);
-                return Ok(new { token = tokenString });
+                return Ok(new { message = new { token = tokenString }});
             }
             catch (Exception e)
             {

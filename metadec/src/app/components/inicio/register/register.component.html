@@ -8,26 +8,26 @@
             <mat-card-content>
             <hr>
             <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-                <mat-step [stepControl]="firstFormGroup" label="Rol">
+                <mat-step [stepControl]="firstFormGroup" label="{{'REGISTER.ROL' | translate }}">
                   <form [formGroup]="firstFormGroup">
                     <!--ROL-->
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label>{{"REGISTER.ROL" | translate }}</mat-label>
                         <mat-select formControlName="rol">
-                          <mat-option value="Docente">Docente</mat-option>
-                          <mat-option value="Estudiante">Estudiante</mat-option>
+                          <mat-option value="Docente">{{"REGISTER.ROLDOCENTE" | translate }}</mat-option>
+                          <mat-option value="Estudiante">{{"REGISTER.ROLESTUDIANTE" | translate }}</mat-option>
                         </mat-select>
                         <mat-error *ngIf="firstFormGroup.get('rol')?.hasError('required') && firstFormGroup.get('rol')?.touched">
-                          Rol Requerido
+                          {{"REGISTER.ROLVALIDATION" | translate }}
                         </mat-error>
                       </mat-form-field>
                     <div>
-                      <button mat-raised-button matStepperNext style="margin: 0px;" color="accent">Next</button>
+                      <button mat-raised-button matStepperNext style="margin: 0px;" color="accent">{{"REGISTER.BTNNEXT" | translate }}</button>
                     </div>
                   </form>
                 </mat-step>
 
-                <mat-step [stepControl]="secondFormGroup" label="Informacion General">
+                <mat-step [stepControl]="secondFormGroup" label="{{'REGISTER.SUBTITLE2' | translate }}">
                     <form [formGroup]="secondFormGroup">
                       <div class="cards">
                         <!--Nombre-->
@@ -36,7 +36,7 @@
                           <input matInput type="text" formControlName="nombre" required>
                           <mat-icon matSuffix>person</mat-icon>
                           <mat-error *ngIf="secondFormGroup.get('nombre')?.hasError('required') && secondFormGroup.get('nombre')?.touched">
-                              Nombre Requerido
+                            {{"REGISTER.NAMEVALIDATION" | translate }}
                           </mat-error>
                       </mat-form-field>
                       <!--Apellido-->
@@ -45,7 +45,7 @@
                         <input matInput type="text" formControlName="apellido" required>
                         <mat-icon matSuffix>person</mat-icon>
                         <mat-error *ngIf="secondFormGroup.get('apellido')?.hasError('required') && secondFormGroup.get('apellido')?.touched">
-                            Apellido Requerido
+                          {{"REGISTER.LASTNAMEVALIDATION" | translate }}
                         </mat-error>
                       </mat-form-field>
                       </div>
@@ -54,12 +54,12 @@
                           <mat-form-field appearance="fill" style="margin-bottom: 0px;">
                             <mat-label>{{"REGISTER.SEX" | translate }}</mat-label>
                             <mat-select formControlName="sexo">
-                              <mat-option value="Femenino">Femenino</mat-option>
-                              <mat-option value="Masculino">Masculino</mat-option>
-                              <mat-option value="Otro">Otro</mat-option>
+                              <mat-option value="Femenino">{{"REGISTER.WOMEN" | translate }}</mat-option>
+                              <mat-option value="Masculino">{{"REGISTER.MEN" | translate }}</mat-option>
+                              <mat-option value="Otro">{{"REGISTER.OTHER" | translate }}</mat-option>
                             </mat-select>
                             <mat-error *ngIf="secondFormGroup.get('sexo')?.hasError('required') && secondFormGroup.get('sexo')?.touched">
-                              Sexo Requerido
+                              {{"REGISTER.SEXVALIDATION" | translate }}
                             </mat-error>
                           </mat-form-field>
                           <!--EMAIL-->
@@ -67,11 +67,11 @@
                             <mat-label>{{"REGISTER.EMAIL" | translate }}</mat-label>
                             <input matInput type="email" formControlName="correo" required>
                             <mat-icon matSuffix>mail</mat-icon>
-                            <mat-error *ngIf="secondFormGroup.get('correo')?.hasError('email')">
-                              Please enter a valid email address
+                            <mat-error *ngIf="secondFormGroup.get('correo')?.hasError('required')">
+                              {{"REGISTER.EMAILVALIDATION" | translate }}
                             </mat-error>
-                            <mat-error *ngIf="secondFormGroup.get('correo')?.hasError('required') && secondFormGroup.get('email')?.touched">
-                              Email Requerido
+                            <mat-error *ngIf="secondFormGroup.get('correo')?.hasError('email')">
+                              {{"REGISTER.EMAILVALIDATIONFORMAT" | translate }}
                             </mat-error>
                             </mat-form-field>
                         </div>
@@ -82,15 +82,15 @@
                             <mat-option *ngFor="let pais of Paises" [value]="pais.idPais">{{languagePais(pais.pais)}}</mat-option >
                           </mat-select>
                           <mat-error *ngIf="secondFormGroup.get('pais')?.hasError('required') && secondFormGroup.get('pais')?.touched">
-                            Pais Requerido
+                            {{"REGISTER.COUNTRYVALIDATION" | translate }}
                           </mat-error>
                         </mat-form-field>
                       <div>
-                        <button mat-raised-button matStepperNext style="margin: 0px;" color="accent">Next</button>
+                        <button mat-raised-button matStepperNext style="margin: 0px;" color="accent">{{"REGISTER.BTNNEXT" | translate }}</button>
                       </div>
                     </form>
                 </mat-step>
-                <mat-step [stepControl]="thirdFormGroup" label="Informacion Academica">
+                <mat-step [stepControl]="thirdFormGroup" label="{{'REGISTER.SUBTITLE3' | translate }}">
                   <form [formGroup]="thirdFormGroup">
                     <!--INSITUCION-->
                     <mat-form-field appearance="fill" class="example-full-width">
@@ -98,8 +98,8 @@
                       <mat-select formControlName="institucion" (ngModelChange)="programaList()">
                         <mat-option *ngFor="let inst of Instituciones" [value]="inst.idInstitucion">{{inst.nombreInstitucion}}</mat-option>
                       </mat-select>
-                      <mat-error *ngIf="firstFormGroup.get('institucion')?.hasError('required') && firstFormGroup.get('institucion')?.touched">
-                        Institucion Requerido
+                      <mat-error *ngIf="thirdFormGroup.get('institucion')?.hasError('required') && thirdFormGroup.get('institucion')?.touched">
+                        {{"REGISTER.INSTITUTIONVALIDATION" | translate }}
                       </mat-error>
                     </mat-form-field>
                     <!--PROGRAMA-->
@@ -108,17 +108,17 @@
                       <mat-select formControlName="programa" required>
                         <mat-option *ngFor="let instPr of InstitucionesProgramas" [value]="instPr.idInstitucionPrograma">{{instPr.idProgramaNavigation.programa}}</mat-option>
                       </mat-select>
-                      <mat-error *ngIf="firstFormGroup.get('programa')?.hasError('required') && firstFormGroup.get('programa')?.touched">
-                        Programa Requerido
+                      <mat-error *ngIf="thirdFormGroup.get('programa')?.hasError('required') && thirdFormGroup.get('programa')?.touched">
+                        {{"REGISTER.PROGRAMVALIDATION" | translate }}
                       </mat-error>
                       <app-loading *ngIf="loadingProgram"></app-loading>
                     </mat-form-field>
                     <div>
-                      <button mat-raised-button matStepperNext style="margin: 0px;" color="accent">Next</button>
+                      <button mat-raised-button matStepperNext style="margin: 0px;" color="accent">{{"REGISTER.BTNNEXT" | translate }}</button>
                     </div>
                   </form>
                 </mat-step>
-                <mat-step [stepControl]="fourFormGroup" label="Inicio de sesion">
+                <mat-step [stepControl]="fourFormGroup" label="{{'REGISTER.SUBTITLE4' | translate }}">
                     <form [formGroup]="fourFormGroup" (ngSubmit)=registrarUsuario()>
                         <!--Usuario-->
                         <mat-form-field class="example-full-width" style="margin-bottom: 0px;">
@@ -126,7 +126,7 @@
                             <input matInput type="text" formControlName="usuario" required>
                             <mat-icon matSuffix>person</mat-icon>
                             <mat-error *ngIf="fourFormGroup.get('usuario')?.hasError('required') && fourFormGroup.get('usuario')?.touched">
-                                Usuario Requerido
+                              {{"REGISTER.USERVALIDATION" | translate }}
                             </mat-error>
                         </mat-form-field>
                         <!--Pass-->
@@ -136,18 +136,18 @@
                           <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                           </button>
-                          <mat-error *ngIf="!fourFormGroup.get('password')?.valid && fourFormGroup.get('password')?.touched" style="font-size: small;">
-                            La contraseña debe tener minimo 8 caracteres, un digito, un caracter especial, una mayuscula y una minuscula.
+                          <mat-error *ngIf="!fourFormGroup.get('password')?.valid && fourFormGroup.get('password')?.touched && !fourFormGroup.get('password')?.hasError('required')" style="font-size: small;">
+                            {{"REGISTER.PASSVALIDATIONFORMAT" | translate }}
                           </mat-error>
                           <mat-error *ngIf="fourFormGroup.get('password')?.hasError('required') && fourFormGroup.get('password')?.touched">
-                              Contraseña Requerida
+                            {{"REGISTER.PASSVALIDATION" | translate }}
                           </mat-error>
                         </mat-form-field>
                         <mat-checkbox class="example-margin" (click)="openDialog()" [(ngModel)]="valueTratamiento" style="margin-bottom: 10px;" color="primary" formControlName="politica">
-                          <span>Aceptar politica de tratamiento de datos personales</span>
+                          <span>{{"REGISTER.ACCEPT" | translate }}<b style="text-decoration: underline;">{{"REGISTER.POLICY" | translate }}</b></span>
                         </mat-checkbox>
                         <mat-error *ngIf="!fourFormGroup.get('politica')?.value && fourFormGroup.get('politica')?.touched" style="margin-bottom: 10px;" >
-                          Es obligatorio aceptar la politica para registrarte
+                          {{"REGISTER.POLICYVALIDATION" | translate }}
                         </mat-error>
                         <button mat-flat-button color="primary" class="example-full-width" type="submit" [disabled]=" fourFormGroup.invalid">
                           {{"REGISTER.SEND" | translate }} 

@@ -1,11 +1,11 @@
-.cards {
+.cardsfooter {
     margin: 0;
     width: 90%;
     display: grid;
   }
 
   @media (min-width: 900px) {
-    .cards { grid-template-columns: repeat(2, 1fr);
+    .cardsfooter { grid-template-columns: repeat(2, 1fr);
             margin: 0;
             width: 60%;
             }

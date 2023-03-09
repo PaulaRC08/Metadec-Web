@@ -14,7 +14,7 @@
                 <input matInput type="text" formControlName="usuario">
                 <mat-icon matSuffix>person</mat-icon>
                 <mat-error *ngIf="login.get('usuario')?.hasError('required') && login.get('usuario')?.touched">
-                    Usuario Requerido
+                  {{"LOGIN.USERVALIDATION" | translate }}
                 </mat-error>
               </mat-form-field>
 
@@ -25,10 +25,10 @@
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 <mat-error *ngIf="login.get('password')?.hasError('minlength') && login.get('password')?.touched">
-                  Contraseña 8 Cartacteres
+                  {{"LOGIN.PASSVALIDATIONFORMAT" | translate }}
                 </mat-error>
                 <mat-error *ngIf="login.get('password')?.hasError('required') && login.get('password')?.touched">
-                    Contraseña Requerida
+                  {{"LOGIN.PASSVALIDATION" | translate }}
                 </mat-error>
               </mat-form-field>
 

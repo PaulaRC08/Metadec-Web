@@ -19,11 +19,6 @@
     }
   }
 
-h4{
-    color: #fff;
-    font-weight: 400;
-
-}
 
 .container{
     display: flex;
@@ -41,7 +36,17 @@ h4{
     max-width: 80px;
     border:  3px #2899be solid;
 }
+.example-section {
+    margin: 12px 0;
+    background-color: #fff;
+    justify-content: center;
+    text-align: center;
+  }
 
+  .example-margin {
+    margin: 0 12px;
+    color: #333333;
+  }
 
 .cards {
     display: grid;
@@ -74,10 +79,130 @@ h4{
     align-items: center;
 }
 
+.titleCard{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.titleInfo{
+    align-items: center; 
+    font-weight: 400; 
+    margin: 0;
+}
+
 .imagenAvatar{
     background-color: transparent;
     justify-content: center;
     padding: 10px 0;
     display: flex;
     align-items: center;
+}
+
+.cardsThird{
+    margin: auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+  @media (min-width: 700px) {
+    .cardsThird { grid-template-columns: repeat(2, 1fr);}
+  }
+  
+  /* Screen larger than 900px? 3 columns */
+  @media (min-width: 1000px) {
+    .cardsThird { grid-template-columns: repeat(3, 1fr); margin: auto; width: 70%;}
+  }
+  .example-card {
+    max-width: 350px;
+    min-width: 100%;
+    padding: 0.5vw; 
+    padding-bottom: 0; 
+    color: #FFF;
+}
+
+.centerDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.titleCard{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.titleFechaCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    margin: 0 ;
+}
+
+.fechaCard{
+    display:inline; 
+    font-weight: 300; 
+    margin: 0; 
+    margin-left: 1px; 
+    padding: 1vh;
+}
+
+.divInfoSesion{
+    padding: 1vh; 
+    justify-content: center; 
+    color: #333333; 
+    background-color: #FFF;
+}
+
+.titleInfo{
+    align-items: center; 
+    font-weight: 400; 
+    text-align: center;
+    margin: 0;
+}
+
+.textInfo{
+    font-weight: 300; 
+    margin: 0; 
+    margin-left: 5px; 
+    padding: 1vh; 
+    text-align: center;
+}
+
+::ng-deep .ngx-charts { 
+    text{
+        fill: #fff!important; 
+    }
+    .text:hover {
+        color: #fff!important; 
+    }
+}
+
+
+::ng-deep .chart-legend {
+
+    .legend-item {
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .legend-label {
+      &:hover {
+        color: #fff !important;
+      }
+
+      .active {
+        .legend-label-text {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+
+
+.divGraph{
+    min-height: 40vh;
+    min-width: 80%;
 }

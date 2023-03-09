@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'app/services/login.service';
 import { SesionUsuarioService } from '../../../../app/services/sesion-usuario.service';
 
 @Component({
@@ -10,7 +12,11 @@ import { SesionUsuarioService } from '../../../../app/services/sesion-usuario.se
 export class SesionComponent {
 
   constructor(private sesionUserService: SesionUsuarioService,
-              private snackBar: MatSnackBar){}
+              private snackBar: MatSnackBar,
+              private loginService: LoginService,
+              private route: ActivatedRoute,
+              private router:Router){}
+  
   Sesiones: any = [];
   
   ngOnInit(): void{
@@ -22,7 +28,10 @@ export class SesionComponent {
         console.log(error.error.message);
       }
     
-  }
+      if(this.loginService.getTokenDecoded().TipoUsuario != "Docente"){
+        this.router.navigate(['/dashboard'])
+      }
+    }
 
   crearClipboard(codigoSesion: string, passSesion: string): string{
     var copy="<METADEC COMPARTE>\nCONECTATE EN ESTA SESION AULA ESPEJO\n💻INGRESA A METADEC Y REGISTRA:\n\n" +

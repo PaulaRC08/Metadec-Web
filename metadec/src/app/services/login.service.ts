@@ -26,9 +26,9 @@ export class LoginService {
     localStorage.setItem('token',data);
   }
 
-  /*getNombreUsuario(){
-    return localStorage.getItem('nombreUsuario')?.toString();
-  }*/
+  getToken(): string{
+    return localStorage.getItem('token')!;
+  }
 
   getTokenDecoded(): any {
     const helper = new JwtHelperService();

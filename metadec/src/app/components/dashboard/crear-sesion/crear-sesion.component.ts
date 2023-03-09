@@ -4,6 +4,7 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAda
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'app/services/login.service';
 import * as moment from 'moment';
 import { Hipervinculo } from '../../../../app/models/hipervinculo';
 import { Sesion } from '../../../../app/models/sesion';
@@ -32,6 +33,7 @@ export class CrearSesionComponent {
               private sesionService: SesionService,
               private snackBar: MatSnackBar,
               private route: ActivatedRoute,
+              private loginService: LoginService,
               private router:Router){
 
     this.sesionForm = this.fb.group({
@@ -44,6 +46,10 @@ export class CrearSesionComponent {
   ngOnInit(): void{
     this.agegarHip();
     console.log("DD:"+this.mindate);
+
+    if(this.loginService.getTokenDecoded().TipoUsuario != "Docente"){
+      this.router.navigate(['/dashboard'])
+    }
   }
 
   //Devolver Hipervinculos

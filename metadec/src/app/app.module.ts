@@ -11,9 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedmaterialModule } from './shared/sharedmaterial/sharedmaterial.module';
+import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { InicioComponent } from './components/inicio/inicio.component';
-import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { DashboardAdminComponent } from './components/dashboard/dashboard-admin/dashboard-admin.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
 import { PoliticaTratamiento } from './components/inicio/register/register.component';
 import { LoginComponent } from './components/inicio/login/login.component';
@@ -27,31 +28,8 @@ import { NavbarInitComponent } from './components/inicio/navbar-init/navbar-init
 import { NetiquetaComponent } from './components/inicio/netiqueta/netiqueta.component';
 import { AvatarComponent } from './components/inicio/avatar/avatar.component';
 import { SesionComponent } from './components/dashboard/sesion/sesion.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CambiarPassComponent } from './components/dashboard/cambiar-pass/cambiar-pass.component';
 
-
-import {ReactiveFormsModule } from '@angular/forms';
-import {MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule } from '@angular/material/core';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatMenuModule} from '@angular/material/menu';
-import {FlexLayoutModule } from '@angular/flex-layout';
-import {ClipboardModule} from '@angular/cdk/clipboard';
-import {MatDialogModule} from '@angular/material/dialog';
 
 export function HttpLoaderFactory( http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json')
@@ -77,13 +55,16 @@ export function HttpLoaderFactory( http: HttpClient){
     NetiquetaComponent,
     AvatarComponent,
     SesionComponent,
-    PoliticaTratamiento
+    PoliticaTratamiento,
+    CambiarPassComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SharedmaterialModule,
+    NgxChartsModule,
     TranslateModule.forRoot({
       loader:{
         provide: TranslateLoader,
@@ -91,32 +72,7 @@ export function HttpLoaderFactory( http: HttpClient){
         deps: [HttpClient]
       }
     }),
-    MatSlideToggleModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    MatSlideToggleModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    MatDividerModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatExpansionModule,
-    MatStepperModule,
-    MatCheckboxModule,
-    MatSnackBarModule,
-    MatProgressBarModule,
-    MatMenuModule,
-    FlexLayoutModule,
-    ClipboardModule,
-    MatDialogModule,
-    BrowserAnimationsModule,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],

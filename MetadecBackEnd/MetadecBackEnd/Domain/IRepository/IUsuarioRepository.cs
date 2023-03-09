@@ -8,5 +8,8 @@ namespace MetadecBackEnd.Domain.IRepository
         Task<bool> ValidateExistence(MdUsuario usuario);
         Task<MdUsuario> ValidarPassword(int idUsuario, string passwordAnterior);
         Task UpdatePassword(MdUsuario usuario);
+
+        Task<MdUsuario> getUsuarioById(int id);
+
     }
 }

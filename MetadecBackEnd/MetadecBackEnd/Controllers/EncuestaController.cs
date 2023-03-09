@@ -32,5 +32,18 @@ namespace MetadecBackEnd.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> get()
+        {
+            try
+            {
+                var encuestaReg = await _encuestaRepository.resultadosEncuesta();
+                return Ok(encuestaReg);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

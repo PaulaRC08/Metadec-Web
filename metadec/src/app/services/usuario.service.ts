@@ -22,6 +22,19 @@ export class UsuarioService {
   saveUser(usuario: User): Observable<any> {
     return this.http.post(this.myAppUrl+this.myApiUrl, usuario);
   }
+
+  getUser(idUsuario: number): Observable<any> {
+    return this.http.get(this.myAppUrl+this.myApiUrl+"/"+idUsuario);
+  }
+
+  getReporte(idUsuario: number): Observable<any> {
+    return this.http.get(this.myAppUrl+this.myApiUrl+"/reportes/"+idUsuario);
+  }
+
+  changePassword(changePassword: any): Observable<any>{
+    return this.http.put(this.myAppUrl + this.myApiUrl + '/CambiarPassword', changePassword);
+  }
+
   setLocalStorage(data: any): void {
     localStorage.setItem('userRegister',data);
   }

@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="center">
-        <h1 class="tituloBlanco">BIENVENIDO</h1>
+        <h1 class="tituloBlanco">{{"DASHBOARD.TITLE" | translate }}</h1>
         <hr class="lineaAzul">
 
     </div>
@@ -9,9 +9,36 @@
 
 
 <div class="fondoCirculos">
-    <div class="cards" style="background-color: white; margin: 2vh auto; ">
+    <br>
+    <div class="centerDiv" *ngIf="reporteActivo">
+        <mat-card style="background-color: #871b0b; color:white;width: 70%;">
+            <mat-card-content>
+                <h2 style="margin: 0;">{{"DASHBOARD.REPORT" | translate }}</h2>
+                <h4 style="font-weight: 300; margin: 0;">{{"DASHBOARD.SUBTITLEREPORT" | translate }}</h4>
+                <hr>
+                <div class="cards" style="width: 100%; text-align: center;">
+                    <h4 style="font-weight: 400; margin: 0;">
+                        {{"DASHBOARD.DATEINIT" | translate }}:
+                        <h4 style="font-weight: 300; margin: 0; display: inline;">{{reporte.fechaReporte}}</h4>
+                    </h4>
+                    <h4 style="font-weight: 400; margin: 0;">
+                        {{"DASHBOARD.DATEFINISH" | translate }}:
+                        <h4 style="font-weight: 300; margin: 0; display: inline;">{{reporte.fechaFin}}</h4>
+                    </h4>
+                </div>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin" [checked]="reporte.comunicacionOfensiva" disabled>{{"DASHBOARD.REPORTE1" | translate }}</mat-checkbox>
+                    <mat-checkbox class="example-margin" [checked]="reporte.nombreOfensivo" disabled>{{"DASHBOARD.REPORTE2" | translate }}</mat-checkbox>
+                    <mat-checkbox class="example-margin" [checked]="reporte.comportIrrespetuoso" disabled>{{"DASHBOARD.REPORTE3" | translate }}</mat-checkbox>
+                    <mat-checkbox class="example-margin" [checked]="reporte.amenaza" disabled>{{"DASHBOARD.REPORTE4" | translate }}</mat-checkbox>
+                </section>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="cards" style="background-color: transparent; margin: 2vh auto; ">
         <div class="imagenAvatar">
-            <img src="https://models.readyplayer.me/63d4a314bc1bcc3f933ba207.png?scene=fullbody-portrait-v1" width="100%">
+            <img [src]="avatarUrl" width="100%">
         </div>
         <div class="concepto">
             <div style="color:white;">
@@ -20,20 +47,101 @@
                 </div>
                 
                 <h2 color="primary" style="font-weight: 400; font-size: 3vh;">
-                    PAULA RODRIGUEZ
+                    {{nombre}}
                 </h2>
                 <hr style="border:  1px #2899be solid;">
-                <p style="font-weight: 300; align-items: center; display: flex;"><mat-icon style="margin-right: 5px;">wc</mat-icon> Mujer</p>
-                <p style="font-weight: 300; align-items: center; display: flex;"><mat-icon style="margin-right: 5px;">public</mat-icon>Colombia</p>
-                <p style="font-weight: 300; align-items: center; display: flex;"><mat-icon style="margin-right: 5px;">mail</mat-icon> paula@paula.com</p>
+                <p style="font-weight: 300; align-items: center; display: flex;"><mat-icon style="margin-right: 5px;">wc</mat-icon>{{sexo}}</p>
+                <p style="font-weight: 300; align-items: center; display: flex;"><mat-icon style="margin-right: 5px;">public</mat-icon>{{paisUser}}</p>
+                <p style="font-weight: 300; align-items: center; display: flex;"><mat-icon style="margin-right: 5px;">mail</mat-icon>{{correo}}</p>
 
-                <button mat-flat-button color="primary" class="example-full-width" >
-                    CAMBIAR CONTRASEÑA
+                <button mat-flat-button color="primary" routerLink="/dashboard/cambiarPass" class="example-full-width" >
+                    {{"DASHBOARD.CHANGEPASS" | translate }}
                 </button>
             </div>
         </div>
     
     </div>
 
+    <div *ngIf="!haveSession">
+        <br>
+        <h1 style="text-align: center; color: #5a5a5a;">{{"DASHBOARD.NOTSESSION" | translate }}</h1>
+    </div>
 
+    <div *ngIf="haveSession">
+    
+        <br>
+    
+        <div style="background-color: #5a5a5a; color:white; padding: 2vh 0;">
+    
+            <h1 style="text-align: center; margin-bottom: 0;">{{"DASHBOARD.TITLECOUNTRY" | translate }}</h1>
+            <h4 style="text-align: center; font-weight: 300; margin-top: 0;">{{"DASHBOARD.SUBTITLECOUNTRY" | translate }}</h4>
+            <br>
+            <div class="centerDiv">
+                <div class="divGraph">
+                    <ngx-charts-bar-vertical
+                    scheme="aqua"
+                    [results]="single"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    legendTitle="{{'DASHBOARD.LEGEND' | translate }}"
+                    [autoScale]="true"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    xAxisLabel="{{'DASHBOARD.AXISX' | translate }}"
+                    yAxisLabel="{{'DASHBOARD.AXISY' | translate }}"
+                    (select)="onSelect($event)">
+                    </ngx-charts-bar-vertical>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="center" style="margin-top: 20px;" >
+            <h1 style="font-size: 5vh; padding: 1vw 1vw; margin: 0;">
+                {{"DASHBOARD.TITLEULTIMA" | translate }}
+                <h1 style="font-size: 5.5vh; font-weight: 300; display:inline; margin: 0;">{{"DASHBOARD.TITLESESSION" | translate }}</h1>
+            </h1>
+        </div>
+    
+        <div>
+    
+    
+            <div class="cardsThird" >
+                <div class="centerDiv" *ngFor="let sesion of sesionesUsuario, let i = index">
+                    <mat-card class="example-card accent" [ngStyle]="{'background-color': getColor(i)}">               
+                        <mat-card-content style="padding: 2vh;">
+                            <div style="text-align: center;">
+                                <h1 class="titleCard">{{(sesionesUsuario[i].clase).toUpperCase()}}</h1>
+                                <h4 class="titleFechaCard">
+                                    <mat-icon>event</mat-icon> 
+                                    {{"DASHBOARD.DATESESSION" | translate }}:
+                                    <h4 class="fechaCard">
+                                        {{sesionesUsuario[i].fechaSesion}}
+                                    </h4>
+                                </h4>
+                            </div>
+                            <hr class="hrCard">
+                            <div class="divInfoSesion">
+                                <h4 class="titleInfo">
+                                    <mat-icon style="margin: auto; padding: 0;">groups_2</mat-icon> 
+                                    {{"DASHBOARD.NPLAYERS" | translate }}:
+                                </h4>
+                                <h4 class="textInfo">
+                                    {{sesionesUsuario[i].numeroJugadores}}
+                               </h4>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                
+            </div>
+    
+    
+        </div>
+
+    </div>
+
+
+<br>
 </div>

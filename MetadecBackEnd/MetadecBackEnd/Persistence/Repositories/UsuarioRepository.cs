@@ -11,6 +11,15 @@ namespace MetadecBackEnd.Persistence.Repositories
         {
             _context = context;
         }
+
+        public async Task<MdUsuario> getUsuarioById(int id)
+        {
+            var usuario = _context.MdUsuarios.Where(x => x.IdUsuario == id)
+                .Include(x => x.IdPaisNavigation)
+                .FirstOrDefault();
+            return usuario;
+        }
+
         public async Task<MdUsuario> SaveUser(MdUsuario usuario)
         {
             usuario.FechaCreacion = DateTime.Now;

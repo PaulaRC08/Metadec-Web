@@ -15,9 +15,15 @@ export class SesionUsuarioService {
     this.myApiUrl='/api/sesionusuario';
   }
 
+  listSesioneUserRealizadas(idUsuario: number): Observable<any>{
+    return this.http.get(this.myAppUrl+this.myApiUrl+"/sesiones/"+idUsuario);
+  }
+
   listSesionUser(): Observable<any>{
     return this.http.get(this.myAppUrl+this.myApiUrl);
   }
   
-
+  listPaisesUsuario(idUsuario: number): Observable<any> {
+    return this.http.get(this.myAppUrl+this.myApiUrl+"/"+idUsuario);
+  }
 }

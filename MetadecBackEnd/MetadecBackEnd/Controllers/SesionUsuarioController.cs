@@ -1,6 +1,7 @@
 ﻿using MetadecBackEnd.Domain.IRepository;
 using MetadecBackEnd.Domain.Models;
 using MetadecBackEnd.DTO;
+using MetadecBackEnd.Persistence.Repositories;
 using MetadecBackEnd.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -44,7 +45,32 @@ namespace MetadecBackEnd.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet("{idUsuario}")]
+        public async Task<IActionResult> GetPaises(int idUsuario)
+        {
+            try
+            {
+                var list = await _sesionUsuarioRepository.listaPaises(idUsuario);
+
+                if (list == null)
+                {
+                    return Ok("Sin Sesiones Realizadas");
+                }
+                var result = list.GroupBy(n => n)
+                    .Select(c => new { Pais = c.Key, total = c.Count() }).Take(5);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+
+
+
+
+            [HttpPost]
         public async Task<IActionResult> Post([FromBody] SesionUsuarioDTO sesionUsuario)
         {
             try
@@ -57,5 +83,37 @@ namespace MetadecBackEnd.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [Route("sesiones/{idUsuario}")]
+        [HttpGet]
+        public async Task<IActionResult> Get(int idUsuario)
+        {
+            try
+            {
+                var ListaSesiones = await _sesionUsuarioRepository.listSesionesActivas(idUsuario);
+                if (ListaSesiones == null)
+                {
+                    return Ok("Sin Sesiones Terminadas");
+                }
+                else
+                {
+                    List<SesionesUsuarioDTO> listDTOSesion = new List<SesionesUsuarioDTO>();
+                    foreach (var item in ListaSesiones)
+                    {
+                        SesionesUsuarioDTO sesionDTO = new SesionesUsuarioDTO();
+                        sesionDTO.Clase = item.IdSesionNavigation.Clase;
+                        sesionDTO.FechaSesion = item.IdSesionNavigation.FechaSesion.ToShortDateString().ToString();
+                        sesionDTO.NumeroJugadores = item.IdSesionNavigation.MdSesionUsuarios.Count();
+                        listDTOSesion.Add(sesionDTO);
+                    }
+
+                    return Ok(listDTOSesion);
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
     }
 }

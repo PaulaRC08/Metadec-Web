@@ -75,14 +75,15 @@ export class RegisterComponent {
   }
 
   ngOnInit(): void{
-    if(this.usuarioService.urlUser==null){
+    /*if(this.usuarioService.urlUser==null){
       this.router.navigate(['/inicio'])
-    }
+    }*/
     console.log("dasdas:"+this.valueTratamiento);
     this.paisesList();
     this.institucionesList();
     console.log(this.institucionList);
     this.thirdFormGroup.get("programa")?.disable();
+    console.log("avatar: "+localStorage.getItem("urlAvatar"));
   }
 
   languagePais(pais: string): string{
@@ -126,12 +127,12 @@ export class RegisterComponent {
   registrarUsuario(): void{
       
     console.log(this.fourFormGroup);
-
+      
       const usuario: User = {
         Usuario: this.fourFormGroup.value.usuario,
         TipoUsuario: this.firstFormGroup.value.rol,
         Pasword: this.fourFormGroup.value.password,
-        AvatarUrl: this.usuarioService.urlUser,
+        AvatarUrl:  this.usuarioService.urlUser,
         Nombres: this.secondFormGroup.value.nombre,
         Apellidos: this.secondFormGroup.value.apellido,
         Sexo: this.secondFormGroup.value.sexo,
@@ -150,21 +151,34 @@ export class RegisterComponent {
         }
         console.log(docente);
         this.docenteService.saveDocente(docente).subscribe(data =>{
-          this.snackBar.open(" Usuario "+usuario.Usuario+" Correctamente", '',{
-            duration: 2000,
-            verticalPosition: 'top',
-            panelClass: ['success-snackbar']
-          });
-          this.snackBar.open("Consulta la NETIQUETA para ingresar", '',{
-            duration: 2000,
-            verticalPosition: 'top',
-            panelClass: ['info-snackbar']
-          });
-          this.loading=false;
-          this.router.navigate(['/inicio/login'])
+          console.log(data);
+          if(data.message!="Usuario ya existe"){
+            this.snackBar.open(this.translate.instant('REGISTER.USER')+usuario.Usuario+this.translate.instant('REGISTER.BARRCORRECT'), '',{
+              duration: 2000,
+              verticalPosition: 'top',
+              panelClass: ['success-snackbar']
+            });
+            this.snackBar.open(this.translate.instant('REGISTER.BARNETIQUETA'), '',{
+              duration: 2000,
+              verticalPosition: 'top',
+              panelClass: ['info-snackbar']
+            });
+            this.loading=false;
+            this.router.navigate(['/inicio/login'])
+          }else{
+            this.loading = false;
+            this.fourFormGroup.reset();
+            this.snackBar.open(this.translate.instant('REGISTER.USER')+" "+usuario.Usuario+" "+this.translate.instant('REGISTER.BAREXISTING'), '',{
+              duration: 2000,
+              verticalPosition: 'top',
+              panelClass: ['error-snackbar']
+            });
+          }
+
         }, error => {
           this.loading = false;
-          this.snackBar.open(("ERROR: El"+error.error.message).toUpperCase(), '',{
+          console.log(error);
+          this.snackBar.open(("ERROR: El"+error.error.message), '',{
             duration: 5000,
             verticalPosition: 'top',
             panelClass: ['error-snackbar']
@@ -181,20 +195,33 @@ export class RegisterComponent {
         }
 
         this.estudianteService.saveEstudiante(estudiante).subscribe(data =>{
-          this.snackBar.open(" Usuario "+usuario.Usuario+" Correctamente", '',{
-            duration: 2000,
-            verticalPosition: 'top',
-            panelClass: ['success-snackbar']
-          });
-          this.snackBar.open("Consulta la NETIQUETA para ingresar", '',{
-            duration: 2000,
-            verticalPosition: 'top',
-            panelClass: ['info-snackbar']
-          });
-          this.loading=false;
-          this.router.navigate(['/inicio/login'])
+          console.log(data);
+          if(data.message!="Usuario ya existe"){
+            this.snackBar.open(this.translate.instant('REGISTER.USER')+usuario.Usuario+this.translate.instant('REGISTER.BARRCORRECT'), '',{
+              duration: 2000,
+              verticalPosition: 'top',
+              panelClass: ['success-snackbar']
+            });
+            this.snackBar.open(this.translate.instant('REGISTER.BARNETIQUETA'), '',{
+              duration: 2000,
+              verticalPosition: 'top',
+              panelClass: ['info-snackbar']
+            });
+            this.loading=false;
+            this.router.navigate(['/inicio/login'])
+          }else{
+            this.loading = false;
+            this.fourFormGroup.reset();
+            this.snackBar.open(this.translate.instant('REGISTER.USER')+" "+usuario.Usuario+" "+this.translate.instant('REGISTER.BAREXISTING'), '',{
+              duration: 2000,
+              verticalPosition: 'top',
+              panelClass: ['error-snackbar']
+            });
+          }
+
         }, error => {
           this.loading = false;
+          console.log(error);
           this.snackBar.open(("ERROR: El"+error.error.message).toUpperCase(), '',{
             duration: 5000,
             verticalPosition: 'top',

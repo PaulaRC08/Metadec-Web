@@ -39,14 +39,30 @@ export class LoginComponent {
     
     this.loginService.login(userlogin).subscribe(data => {
       //console.log(data.usuario.nombres);
-      this.loginService.setLocalStorage(data.token);
-      this.loading = false;
-      localStorage.removeItem('urlAvatar');
-      localStorage.removeItem('userRegister');
-      this.router.navigate(['/dashboard/dash-content'])
+      if(data.message=="Datos incorrectos"){
+        this.loading = false;
+        this.login.reset();
+        this.snackBar.open(" Datos Incorrectos", '',{
+          duration: 3000,
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar']
+        });
+      }else{
+        this.loginService.setLocalStorage(data.message.token);
+        this.loading = false;
+        localStorage.removeItem('urlAvatar');
+        localStorage.removeItem('userRegister');
+        if(this.loginService.getTokenDecoded().TipoUsuario=="Admin"){
+          this.router.navigate(['/dashboard/dash-admin'])
+        }else{
+          this.router.navigate(['/dashboard'])
+        }
+      }
+
     }, error => {
       this.loading = false;
-      this.snackBar.open(" ERROR: "+ (error.error.message).toUpperCase(), '',{
+      console.log(error);
+      this.snackBar.open(" ERROR: "+ (error.error.message), '',{
         duration: 3000,
         verticalPosition: 'top',
         panelClass: ['error-snackbar']

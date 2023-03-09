@@ -14,6 +14,17 @@ namespace MetadecBackEnd.Persistence.Repositories
             _context = context;
         }
 
+        public async Task<EncuestaAdminDTO> resultadosEncuesta()
+        {
+            EncuestaAdminDTO encuestaAdmin = new EncuestaAdminDTO();
+            encuestaAdmin.pregunta1 = _context.MdEncuesta.GroupBy(x=>x.Pregunta1).Select(x => new repuestasDTO{ name = x.Key, value = x.Count()}).ToList();
+            encuestaAdmin.pregunta2 = _context.MdEncuesta.GroupBy(x => x.Pregunta2).Select(x => new repuestasDTO { name = x.Key, value = x.Count() }).ToList();
+            encuestaAdmin.pregunta3 = _context.MdEncuesta.GroupBy(x => x.Pregunta3).Select(x => new repuestasDTO { name = x.Key, value = x.Count() }).ToList();
+            encuestaAdmin.pregunta4 = _context.MdEncuesta.GroupBy(x => x.Pregunta4).Select(x => new repuestasDTO { name = x.Key, value = x.Count() }).ToList();
+            encuestaAdmin.pregunta5 = _context.MdEncuesta.GroupBy(x => x.Pregunta5).Select(x => new repuestasDTO { name = x.Key, value = x.Count() }).ToList();
+            return encuestaAdmin;
+        }
+
         public async Task<MdEncuestum> SaveEncuesta(EncuestaDTO encuesta)
         {
             //usuario.FechaCreacion = DateTime.Now;

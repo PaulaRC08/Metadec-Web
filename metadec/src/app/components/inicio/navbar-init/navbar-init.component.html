@@ -7,20 +7,27 @@
         </button>
         <a style="margin-left: 10px;" class="nombreMetadec" routerLink="/inicio">METADEC</a>
         <span class="example-spacer" ></span>
+        <button mat-icon-button (click)="changeLanguage()">
+          <img [src]="urlImage" style="height:auto;">
+        </button>
+
         <div fxShow="true" fxHide.gt-sm="true">
             <button mat-icon-button (click)="sidenav.toggle()" >
               <mat-icon>menu</mat-icon>
             </button>
         </div>
 
+
         <div fxShow="true" fxHide.lt-md="true" style="height: 100%;">
-            <button mat-flat-button color="accent" routerLink="/inicio/netiqueta"><mat-icon>groups</mat-icon>NETIQUETA</button>
-            <button mat-flat-button class="example-icon"  [matMenuTriggerFor]="menu" color="primary" style="width: 180px">  INGRESAR
+
+            <button mat-flat-button color="accent" routerLink="/inicio/netiqueta"><mat-icon>groups</mat-icon>{{"WELCOME.NETIQUETTE" | translate }}</button>
+            <button mat-flat-button class="example-icon"  [matMenuTriggerFor]="menu" color="primary" style="width: 190px">  {{"WELCOME.GETINTO" | translate }}
                 <mat-icon class="material-symbols-outlined">account_circle</mat-icon>
             </button>
-            <mat-menu #menu="matMenu" style="width: 180px">
-                <button mat-menu-item routerLink="/inicio/login"><mat-icon class="material-symbols-outlined">account_circle</mat-icon>INICIAR SESION</button>
-                <button mat-menu-item routerLink="/inicio/avatar"><mat-icon class="material-symbols-outlined">person_add</mat-icon>REGISTRARSE</button>
+          
+            <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item routerLink="/inicio/login" style="font-size: 2px !important;"><mat-icon class="material-symbols-outlined">account_circle</mat-icon>{{"WELCOME.LOGIN" | translate }}</button>
+                <button mat-menu-item routerLink="/inicio/avatar" style="font-size: xx-small !important;"><mat-icon class="material-symbols-outlined">person_add</mat-icon>{{"WELCOME.REGISTER" | translate }}</button>
             </mat-menu>
         </div>
 
@@ -28,9 +35,9 @@
     <mat-sidenav-container fxFlexFill class="example-container">
       <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
         <div fxLayout="column" style="margin-top: 50px;">
-          <button mat-flat-button routerLink="/inicio/netiqueta" style="display: flex; align-items: center"><mat-icon>groups</mat-icon>NETIQUETA</button>
-          <button mat-flat-button routerLink="/inicio/login"><mat-icon class="material-symbols-outlined">account_circle</mat-icon>INICIAR SESION</button>
-          <button mat-flat-button routerLink="/inicio/avatar"><mat-icon class="material-symbols-outlined">person_add</mat-icon>REGISTRARSE</button>
+          <button mat-flat-button routerLink="/inicio/netiqueta" style="display: flex; align-items: center"><mat-icon>groups</mat-icon>{{"WELCOME.NETIQUETTE" | translate }}</button>
+          <button mat-flat-button routerLink="/inicio/login"><mat-icon class="material-symbols-outlined">account_circle</mat-icon>{{"WELCOME.LOGIN" | translate }}</button>
+          <button mat-flat-button routerLink="/inicio/avatar"><mat-icon class="material-symbols-outlined">person_add</mat-icon>{{"WELCOME.REGISTER" | translate }}</button>
         </div>
       </mat-sidenav>
       <mat-sidenav-content fxFlexFill>

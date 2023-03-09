@@ -1,65 +1,186 @@
 {
     "HELLO": "hola",
+
+    "WELCOME":{
+        "NETIQUETTE": "NETIQUETA",
+        "GETINTO": "INGRESAR",
+        "LOGIN": "INICIAR SESION",
+        "REGISTER": "REGISTRO",
+        "SUBTITLE": "METAVERSO PARA LA CULTURIZACION EN AULAS ESPEJO",
+        "DOWNLOAD": "DESCARGAR",
+        "TITLEKNOW": "CONOCE METADEC",
+        "CONCEPT": "CONCEPTO",
+        "DESCRIPCTION": "Metadec es un mundo virtual enfocado a la internacionalización virtual de los estudiantes en la Universidad de Cundinamarca, este espacio virtual estará abierto a cualquier alumno registrado en la institución y de universidades internacionales en convenio que haga parte de una clase Aula espejo con el fin de que les dé la posibilidad de hablar con naturalidad de su cultura",
+        "ACTIVITYS": "ACTIVIDADES",
+        "INTERACTIVE": "INTERACTIVAS",
+        "TITLECANCHAS": "CANCHAS",
+        "CANCHAS": "La actividad con tematica de deportes se localizara en la cancha de futbol en el experior de la universidad.",
+        "TITLEBIENESTAR": "BIENESTAR",
+        "BIENESTAR": "La actividad con tematica de ajedrez se localizara en el salon de bienestar ubicado en el àrea administrativa.",
+        "TITLERESTAURANT": "RESTAURANTE", 
+        "RESTAURANT": "La actividad con tematica de cafetera se localizara en el restaurante encontrado en el tercer piso.",
+        "TITLEGALERY": "UNA VISTA A METADEC"
+    },
+
+    "FOOTER":{
+        "CONTACT": "CONTACTO"
+    },
+
+    "NETIQUETA":{
+        "TITLE":"NORMAS DE CONDUCTA SOCIALMENTE ACEPTABLES EN METADEC",
+        "NETIQUETAURL":"../../../../assets/img/Netiqueta.jpg"
+    },
+
     "LOGIN":{
         "TITLE":"INICIO SESION",
         "USER":"Usuario",
         "PASS":"Contraseña",
-        "REGISTER":"Registrarse",
+        "USERVALIDATION": "Usuario Requerido",
+        "PASSVALIDATIONFORMAT":"La contraseña debe tener un mínimo de 8 caracteres, un digito, un caracter especial, una mayuscula y una minuscula.",
+        "PASSVALIDATION": "Contraseña Requerida",
+        "REGISTER":"REGISTRARSE",
         "SEND":"INICIAR SESION"
     },
 
     "REGISTER":{
         "TITLE":"REGISTRO",
+
+        "BTNNEXT":"SIGUIENTE",
+
+        "SUBTITLE2": "Informacion general",
+        "SUBTITLE3": "Informacion academica",
+        "SUBTITLE4": "Inicio de sesion",
+
         "ROL":"Rol",
+        "ROLVALIDATION":"Rol requerido",
+        "ROLDOCENTE":"Docente",
+        "ROLESTUDIANTE":"Estudiante",
+
         "USER":"Usuario",
         "PASS":"Contraseña",
+        "USERVALIDATION": "Usuario Requerido",
+        "PASSVALIDATIONFORMAT":"La contraseña debe tener un mínimo de 8 caracteres, un digito, un caracter especial, una mayuscula y una minuscula.",
+        "PASSVALIDATION": "Contraseña Requerida",
 
         "NAME":"Nombre",
         "LASTNAME": "Apellido",
         "SEX": "Sexo",
+        "WOMEN":"Mujer",
+        "MEN":"Hombre",
+        "OTHER":"Otro",
+
         "EMAIL": "Correo Electronico",
         "COUNTRY": "Pais",
         "INSTITUTION": "Institucion",
         "PROGRAM": "Programa",
 
+        "NAMEVALIDATION":"Nombre Requirido",
+        "LASTNAMEVALIDATION":"Apellido Requirido",
+        "SEXVALIDATION":"Sexo Requirido",
+        "EMAILVALIDATION":"Correo Requirido",
+        "EMAILVALIDATIONFORMAT":"Ingrese una dirección de correo válida",
+        "COUNTRYVALIDATION":"Pais Requirido",
+        "INSTITUTIONVALIDATION":"Institucion Requirido",
+        "PROGRAMVALIDATION":"Programa Requirido",
+
+        "ACCEPT":"Aceptar ",
+        "POLICY":"politica de tratamiento de datos personales",
+        "POLICYVALIDATION":"Es obligatorio aceptar la política para registrarte",
+
+        "BARCORRECT":"registrado correctamente",
+        "BARNETIQUETA":"Consulta la NETIQUETA para ingresar",
+        "BAREXISTING":"ya existe",
+
         "SEND":"REGISTRAR"
     },
-    "SESSION":{
-        "TITLE":"CREAR SESION DE AULA ESPEJO",
-        "CLASS":"CLASE",
-        "DATE":"FECHA PROGRAMADA",
+    "DASHBOARD":{
+        "TITLE":"BIENVENIDO",
+        "CHANGEPASS":"CAMBIAR CONTRASEÑA",
+        "TITLECOUNTRY":"PAISES CON LOS QUE HAS INTERACTUADO",
+        "SUBTITLECOUNTRY":"4 PAISES CON LOS QUE HAS REALIZADO MAYOR NUMERO DE SESIONES",
+        "AXISY":"Veces de interaccion con un nativo",
+        "AXISX":"Pais",
+        "LEGEND":"Paises",
+        "TITLEULTIMA":"ULTIMAS",
+        "TITLESESSION":"SESIONES",
+        "DATESESSION":"FECHA SESION",
+        "NPLAYERS":"NUMERO DE JUGADORES",
+        "CONTACT":"CONTACTO",
+        
+        "NOTSESSION":"SIN SESIONES REALIZADAS",
 
+        "REPORT":"REPORTE",
+        "SUBTITLEREPORT":"Usted cuenta con un reporte activo en su cuenta",
+        "DATEINIT":"Fecha Inicio",
+        "DATEFINISH":"Fecha Finalizacion",
+        "REPORTE1":"Comunicacion Ofensiva",
+        "REPORTE2":"Nombre Ofensivo",
+        "REPORTE3":"Comportamiento Irrespetuoso",
+        "REPORTE4":"Amenaza"
+    },
+
+    "NAVBARDASH":{
+        "SESSIONS":"SESIONES",
+        "EXIT":"SALIR"
+    },
+
+    "DASHBOARDSESSIONS":{
+        "TITLE":"SESIONES",
+        "BTNCREAT":"CREAR SESION",
+        "SUBTITLESCHEDULED":"SESIONES",
+        "SUBTITLESESSION":"PROGRAMADAS",
+        "MINTITLE":"Sesiones programadas ordenadas segun la fecha mas cercana",
+        "DATE":"FECHA SESION",
+        "CODE":"CODIGO SESION",
+        "PASS":"CONTRASEÑA SESION",
+        "COPY":"Copiar info"
+    },
+
+    "DASHBOARDCREATE":{
+        "TITLE":"PROGRAMAR SESION",
+        "SUBTITLE":"SESION AULA ESPEJO",
+        "MIRRORCLASS":"Clase aula espejo",
+        "DATE":"Fecha Sesion",
         "HYPERLINKS":"HIPERVINCULOS",
-        "DESCRIPTION": "Añade un maximo de 15 link para ver en el mundo virtual de METADEC",
-        "ADDHYPERLINK": "AÑADIR HIPERVINCULO",
+        "DELETE":"Eliminar",
+        "DESCRIPTION": "Añade un maximo de 15 links",
+        "ADDHYPERLINK": "AÑADIR",
         "TITLEHYPERLINK": "Titulo hipervinculo",
-        "URL": "URL hipervinculo",
-        "TYPE": "Tipo de hipervinculo",
-        "SEND":"PROGRAMAR SESION"
+        "URL": "URL hipervinculos",
+        "TYPE": "Tipo Hipervinculo",
+        "SEND":"PROGRAMAR SESION",
+
+        "NAMEVALIDATION":"Nombre Clase Requerido",
+        "DATEVALIDATION":"Fecha Sesion Requerida",
+        "TITLEVALIDATION":"Titulo Hipervinculo Requerido",
+        "TYPEVALIDATION":"Tipo Hipervinculo Requerido",
+        "URLVALIDATION":"URL Requerido",
+        "TYPE1":"Herramienta",
+        "TYPE2":"Informacion",
+        "TYPE3":"Plataforma Academica"
     },
 
-    
-    "PROGRAM":{
-        "TITLE":"PROGRAMA",
-        "NAME":"Programa",
-        "INSTITUTION":"Institucion",
-        "SEND":"AÑADIR PROGRAMA"
-    },
-    "INSTITUTION":{
-        "TITLE":"INSTITUCION",
-        "INSTITUTION":"Institucion",
-        "COUNTRY":"Pais",
-        "SEND":"AÑADIR INSTITUCION"
+    "CHANGEPASS":{
+        "TITLE":"CAMBIAR CONTRASEÑA",
+        "SUBTITLE":"INFORMACION CONTRASEÑA",
+        "PASSACTUAL":"Contraseña Actual",
+        "NEWPASS":"Nueva Contraseña",
+        "CONFIRM":"Confirmar Contraseña",
+        "SEND":"CAMBIAR CONTRASEÑA",
+        "PASSVALIDATION":"Contraseña Requerida",
+        "PASSNEWVALIDATION":"Contraseña Nueva Requerida",
+        "PASSCONVALIDATION":"Confirmacion Requerida",
+        "PASSVALIDATIONFORMAT":"La contraseña debe tener un mínimo de 8 caracteres, un digito, un caracter especial, una mayuscula y una minuscula."
     },
 
-    "CLASS":{
-        "TITLE":"CLASE",
-        "CLASS":"Clase",
-        "PROGRAM":"Programa",
-        "GROUP":"Grupo",
-        "BIMESTER": "Bimestre",
-        "THEACHER": "Docente",
-        "SEND":"AÑADIR CLASE"
+    "DASHADMIN":{
+        "TITLE":"INFORME",
+        "QUESTION": "PREGUNTA ",
+        "SUBQUESTION1":"¿LA EXPERIENCIA DE NAVEGAR EN UN METAVERSO MEJORO LA RELACIÓN CON LOS ESTUDIANTES DENTRO DEL AULA ?",
+        "SUBQUESTION2":"¿LE GUSTARÍA RECIBIR MAS CLASES DENTRO DE METADEC ADICIONAL A AULAS ESPEJO?",
+        "SUBQUESTION3":"¿CREAR UN AVATAR DE SI MISMO Y USARLO DENTRO DE METADEC PERMITIÓ UNA MEJOR COMUNICACIÓN VIRTUAL?",
+        "SUBQUESTION4":"¿LOS RECURSOS DIGITALES DENTRO DEL ESPACIO VIRTUAL COMPLEMENTARON LA SESION SINCRONICA?",
+        "SUBQUESTION5":"¿COMO CALIFICA LA EXPERIENCIA GENERAL DENTRO DE METADEC?",
+        "LABEL":"RESPUESTAS"
     }
-
 }

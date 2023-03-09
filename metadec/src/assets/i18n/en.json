@@ -1,25 +1,92 @@
 {
     "HELLO": "hello",
+
+    "WELCOME":{
+        "NETIQUETTE": "NETIQUETTE",
+        "GETINTO": "GET INTO",
+        "LOGIN": "LOGIN",
+        "REGISTER": "REGISTER",
+        "SUBTITLE": "METAVERSE FOR CULTURIZATION IN MIRROR CLASSROOMS",
+        "DOWNLOAD": "DOWNLOAD",
+        "TITLEKNOW": "KNOW METADEC",
+        "CONCEPT": "CONCEPT",
+        "DESCRIPCTION": "Metadec is a virtual world focused on the virtual internationalization of students at the University of Cundinamarca, this virtual space will be open to any student registered in the institution and from international universities in agreement that is part of a mirror classroom class in order to give them the opportunity to speak naturally about their culture.",
+        "ACTIVITYS": "ACTIVITIES",
+        "INTERACTIVE": "INTERACTIVE",
+        "TITLECANCHAS": "FIELDS",
+        "CANCHAS": "The sports-themed activity is located on the soccer field outside the university.",
+        "TITLEBIENESTAR": "WELFARE",
+        "BIENESTAR": "The chess-themed activity is located in the wellness room located in the administrative area.",
+        "TITLERESTAURANT": "RESTAURANT", 
+        "RESTAURANT": "The coffee-themed activity will be located in the restaurant found on the third floor.",
+        "TITLEGALERY": "A VIEW TO METADEC"
+    },
+
+    "FOOTER":{
+        "CONTACT": "CONTACT"
+    },
+
+    "NETIQUETA":{
+        "TITLE":"SOCIALLY ACCEPTABLE STANDARDS OF CONDUCT AT METADEC",
+        "NETIQUETAURL":"../../../../assets/img/NetiquetaEn.jpg"
+    },
+
     "LOGIN":{
         "TITLE":"LOGIN",
         "USER":"User",
+        "USERVALIDATION": "Required User",
         "PASS":"Password",
+        "PASSVALIDATIONFORMAT":"The password must have a minimum of 8 characters, one digit, one special character, one uppercase and one lowercase.",
+        "PASSVALIDATION": "Required Password",
         "REGISTER":"REGISTER",
         "SEND":"LOGIN"
     },
     "REGISTER":{
         "TITLE":"REGISTER",
-        "ROL":"Rol",
+        "BTNNEXT":"NEXT",
+
+        "SUBTITLE2": "General information",
+        "SUBTITLE3": "Academic information",
+        "SUBTITLE4": "Login information",
+
+        "ROL":"Role",
+        "ROLVALIDATION":"Required rol",
+        "ROLDOCENTE":"Teacher",
+        "ROLESTUDIANTE":"Student",
+
         "USER":"User",
+        "USERVALIDATION": "Required User",
         "PASS":"Password",
+        "PASSVALIDATIONFORMAT":"The password must have a minimum of 8 characters, one digit, one special character, one uppercase and one lowercase.",
+        "PASSVALIDATION": "Required Password",
 
         "NAME":"Name",
+        "NAMEVALIDATION":"Required Name",
         "LASTNAME": "Last Name",
+        "LASTNAMEVALIDATION":"Required Lastname",
         "SEX": "Sex",
+        "WOMEN":"Women",
+        "MEN":"Men",
+        "OTHER":"Other",
+
+        "SEXVALIDATION":"Required Sex",
         "EMAIL": "Email",
+        "EMAILVALIDATION":"Required email",
+        "EMAILVALIDATIONFORMAT":"Please enter a valid email address",
         "COUNTRY": "Country",
+        "COUNTRYVALIDATION":"Required Country",
         "INSTITUTION": "Institution",
+        "INSTITUTIONVALIDATION":"Required Institution",
         "PROGRAM": "Program",
+        "PROGRAMVALIDATION":"Required Program",
+
+        "ACCEPT":"Accept ",
+        "POLICY":"personal data processing policy",
+        "POLICYVALIDATION":"It is mandatory to accept the policy to register",
+
+        "BARCORRECT":"registered successfully",
+        "BARNETIQUETA":"Consult the NETIQUETTE to enter",
+        "BAREXISTING":"already exists",
 
         "SEND":"REGISTER"
     },
@@ -37,26 +104,94 @@
         "SEND":"SCHEDULE SESSION"
     },
 
-    "PROGRAM":{
-        "TITLE":"PROGRAM",
-        "NAME":"Program",
-        "INSTITUTION":"Institution",
-        "SEND":"ADD PROGRAM"
+    "DASHBOARD":{
+        "TITLE":"WELCOME",
+        "CHANGEPASS":"CHANGE PASSWORD",
+        "TITLECOUNTRY":"COUNTRIES WITH WHICH YOU HAVE INTERACTED",
+        "SUBTITLECOUNTRY":"4 COUNTRIES WITH WHICH YOU HAVE CARRIED OUT THE GREATEST NUMBER OF SESSIONS",
+        "AXISY":"Times of interaction with a native",
+        "AXISX":"Country",
+        "LEGEND":"COUNTRIES",
+        "TITLEULTIMA":"LAST",
+        "TITLESESSION":"SESSIONS",
+        "DATESESSION":"DATE SESSION",
+        "NPLAYERS":"NUMBER OF PLAYERS",
+        "CONTACT":"CONTACT",
+
+        "NOTSESSION":"NO SESSIONS CARRIED OUT",
+
+        "REPORT":"REPORT",
+        "SUBTITLEREPORT":"You have an active report in your account",
+        "DATEINIT":"Start date",
+        "DATEFINISH":"Final date",
+        "REPORTE1":"Offensive Communication",
+        "REPORTE2":"Offensive Name",
+        "REPORTE3":"Disrespectful Behavior",
+        "REPORTE4":"Threat"
     },
 
-    "INSTITUTION":{
-        "TITLE":"INSTITUTION",
-        "INSTITUTION":"Institution",
-        "COUNTRY":"Country",
-        "SEND":"ADD INSTITUTION"
+    "NAVBARDASH":{
+        "SESSIONS":"SESSIONS",
+        "EXIT":"EXIT"
     },
-    "CLASS":{
-        "TITLE":"CLASS",
-        "CLASS":"Class",
-        "PROGRAM":"Program",
-        "BIMESTER": "Bimester",
-        "GROUP": "Group",
-        "THEACHER": "Theacher",
-        "SEND":"ADD CLASS"
+
+    "DASHBOARDSESSIONS":{
+        "TITLE":"SESSIONS",
+        "BTNCREAT":"CREATE SESSION",
+        "SUBTITLESCHEDULED":"SCHEDULED",
+        "SUBTITLESESSION":"SESSIONS",
+        "MINTITLE":"Scheduled sessions ordered according to the closest date",
+        "DATE":"DATE SESSION",
+        "CODE":"SESSION CODE",
+        "PASS":"SESSION PASSWORD",
+        "COPY":"Copy info"
+    },
+
+    "DASHBOARDCREATE":{
+        "TITLE":"SCHEDULE SESSION",
+        "SUBTITLE":"MIRROR CLASSROOM SESSION",
+        "MIRRORCLASS":"Mirror class",
+        "DATE":"Date session",
+        "HYPERLINKS":"HYPERLINKS",
+        "DELETE":"Delete",
+        "DESCRIPTION": "Add a maximum of 15 links",
+        "ADDHYPERLINK": "ADD",
+        "TITLEHYPERLINK": "Title hyperlink",
+        "URL": "URL hyperlink",
+        "TYPE": "Hyperlink type",
+        "SEND":"SCHEDULE SESSION",
+
+        "NAMEVALIDATION":"Name Class Required",
+        "DATEVALIDATION":"Required Session Date",
+        "TITLEVALIDATION":"Required Title Hyperlink",
+        "TYPEVALIDATION":"Required Hyperlink Type",
+        "URLVALIDATION":"Required Hyperlink URL",
+        "TYPE1":"Tool",
+        "TYPE2":"Information",
+        "TYPE3":"Academic platform"
+    },
+
+    "CHANGEPASS":{
+        "TITLE":"CHANGE PASSWORD",
+        "SUBTITLE":"PASSWORD INFORMATION",
+        "PASSACTUAL":"Current password",
+        "NEWPASS":"New Password",
+        "CONFIRM":"Confirm Password",
+        "SEND":"CHANGE PASSWORD",
+        "PASSVALIDATION":"Password required",
+        "PASSNEWVALIDATION":"New password required",
+        "PASSCONVALIDATION":"Confirmation required",
+        "PASSVALIDATIONFORMAT":"The password must have a minimum of 8 characters, one digit, one special character, one uppercase and one lowercase."
+    },
+
+    "DASHADMIN":{
+        "TITLE":"REPORT",
+        "QUESTION": "QUESTION ",
+        "SUBQUESTION1":"¿THE EXPERIENCE OF NAVIGATING IN A METAVERSE IMPROVED THE RELATIONSHIP WITH STUDENTS WITHIN THE CLASSROOM?",
+        "SUBQUESTION2":"¿YOU WOULD LIKE TO RECEIVE MORE CLASSES WITHIN METADEC ADDITIONAL TO AULAS ESPEJO?",
+        "SUBQUESTION3":"¿CREATING AN AVATAR OF HIMSELF AND USING IT WITHIN METADEC ALLOWED FOR BETTER VIRTUAL COMMUNICATION?",
+        "SUBQUESTION4":"¿DIGITAL RESOURCES WITHIN THE VIRTUAL SPACE COMPLEMENTED THE SYNCHRONOUS SESSION?",
+        "SUBQUESTION5":"¿HOW DO YOU RATE THE GENERAL EXPERIENCE WITHIN METADEC?",
+        "LABEL":"ANSWERS"
     }
 }
